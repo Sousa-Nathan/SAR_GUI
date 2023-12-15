@@ -164,7 +164,7 @@ def reported_excel(filepath):
         active_sheet.column_dimensions["T"].width = 10.72
         active_sheet.column_dimensions["U"].width = 10.72
         active_sheet.column_dimensions["V"].width = 10.72
-        active_sheet.column_dimensions["W"].width = 10.72
+        active_sheet.column_dimensions["W"].width = 15.58
         active_sheet.column_dimensions["X"].width = 10.72
         active_sheet.column_dimensions["Y"].width = 4.72
         
@@ -274,25 +274,25 @@ def summary_excel(filepath):
             cell.style = formatted_cells
             cell.style = formatted_cells
     
-    for row in filter_page["R2:R3000"]:
+    for row in filter_page["Q2:Q3000"]:
         for cell in row:
             cell.number_format = "0.00%"
     
-    for row in filter_page["S2:S3000"]:
+    for row in filter_page["R2:R3000"]:
         for cell in row:
             cell.number_format = "0.000"
     
-    for row in filter_page["T2:U3000"]:
+    for row in filter_page["S2:T3000"]:
         for cell in row:
             cell.number_format = "0.00"
     
-    for row in filter_page["V2:AC3000"]:
+    for row in filter_page["U2:AB3000"]:
         for cell in row:
             cell.number_format = "0.000"
     
-    for row in filter_page["AD2:AD3000"]:
-        for cell in row:
-            cell.number_format = "0.00%"
+    # for row in filter_page["AD2:AD3000"]:
+    #     for cell in row:
+    #         cell.number_format = "0.00%"
     
     for cell in header_row:
         cell.style = header
@@ -1903,7 +1903,7 @@ def main_window():
             
             if values["-REPORT_OUT-"] != "":        
                 reported_sar_workbook_filename = parse_reported_workbook_name(values["-Workbook_1-"])
-                reported_sar_workbook_directory = values["-REPORT_OUT_BROWSE-"]
+                reported_sar_workbook_directory = os.path.normpath(values["-REPORT_OUT_BROWSE-"])
                 reported_sar_workbook_filepath = os.path.join(reported_sar_workbook_directory, reported_sar_workbook_filename) # reported_sar_workbook_directory + "/" + reported_sar_workbook_filename
                 
                 # print(reported_sar_workbook_filepath)
@@ -1912,7 +1912,7 @@ def main_window():
             
             if values["-SUM_OUT-"] != "":
                 worst_case_summary_sar_workbook_filename = parse_summary_workbook_name(values["-Workbook_1-"])
-                worst_case_summary_sar_workbook_directory = values["-SUM_OUT_BROWSE-"]
+                worst_case_summary_sar_workbook_directory = os.path.normpath(values["-SUM_OUT_BROWSE-"])
                 worst_case_summary_sar_workbook_filepath = os.path.join(worst_case_summary_sar_workbook_directory, worst_case_summary_sar_workbook_filename) # worst_case_summary_sar_workbook_directory + "/" + worst_case_summary_sar_workbook_filename
                 
                 # print(worst_case_summary_sar_workbook_filepath)
@@ -1921,11 +1921,11 @@ def main_window():
             
             if values["-SEC1_OUT-"] != "":
                 sec1_fcc_workbook_filename = parse_sec1_fcc_workbook_name(values["-Workbook_1-"])
-                sec1_fcc_workbook_directory = values["-SEC1_OUT_BROWSE-"]
+                sec1_fcc_workbook_directory = os.path.normpath(values["-SEC1_OUT_BROWSE-"])
                 sec1_fcc_workbook_filepath = os.path.join(sec1_fcc_workbook_directory, sec1_fcc_workbook_filename) # sec1_fcc_workbook_directory + "/" + sec1_fcc_workbook_filename
                 
                 sec1_ised_workbook_filename = parse_sec1_ised_workbook_name(values["-Workbook_1-"])
-                sec1_ised_workbook_directory = values["-SEC1_OUT_BROWSE-"]
+                sec1_ised_workbook_directory = os.path.normpath(values["-SEC1_OUT_BROWSE-"])
                 sec1_ised_workbook_filepath = os.path.join(sec1_ised_workbook_directory, sec1_ised_workbook_filename) # sec1_ised_workbook_directory + "/" + sec1_ised_workbook_filename
                 
                 # print(worst_case_summary_sar_workbook_filepath)
@@ -1935,7 +1935,7 @@ def main_window():
             
             if values["-SMTX_OUT-"] != "":
                 smtx_sar_workbook_filename = parse_smtx_workbook_name(values["-Workbook_1-"])
-                smtx_sar_workbook_directory = values["-SMTX_OUT_BROWSE-"]
+                smtx_sar_workbook_directory = os.path.normpath(values["-SMTX_OUT_BROWSE-"])
                 smtx_sar_workbook_filepath = os.path.join(smtx_sar_workbook_directory, smtx_sar_workbook_filename) # smtx_sar_workbook_directory + "/" + smtx_sar_workbook_filename
                 
                 # print(worst_case_summary_sar_workbook_filepath)
