@@ -61,7 +61,8 @@ class Wlan:
     
     def summary_tech_results(self):
         try:
-            summary_data = self.data.fillna(0)
+            summary_data = self.data
+            summary_data["1-g Meas. (W/kg)"] = summary_data["1-g Meas. (W/kg)"].fillna(0)
             non_zero_data = summary_data[summary_data["1-g Meas. (W/kg)"] != 0]
             
             trans_list = [non_zero_data[non_zero_data["Antenna(s)"] == self.trans[index]] for index, name in enumerate(self.trans)]
@@ -69,7 +70,7 @@ class Wlan:
             summary_results = []
             for data in range(len(trans_list)):
                 for tech in range(len(self.techlist)):
-                    ant_tech_filter = trans_list[data][trans_list[data]["Technology OG"] == self.techlist[tech]]
+                    ant_tech_filter = trans_list[data][trans_list[data]["Tech"] == self.techlist[tech]]
                     summary_results.append(ant_tech_filter.loc[ant_tech_filter.groupby(by = "RF Exposure Condition")["1-g Scaled (W/kg)"].idxmax()].sort_index())
             
             new_summary_results = [summary_results[tech].filter(items = ["System Check Date", "Test Date", "Checked By", "Lab Location", "Sample No.", "Antenna(s)", "Technology", "Band", "RF Exposure Condition", "Mode(s)", "Power Mode(s)", "Dist. (mm)", "Test Position", "Channel", "Freq. (MHz)", "RB Allocation", "RB Offset", "Duty Cycle (%)", "Area Scan Max. SAR (W/kg)", "TuP Limit (dBm)", "Meas. (dBm)", "1-g Meas. (W/kg)", "1-g Scaled (W/kg)", "10-g Meas. (W/kg)", "10-g Scaled (W/kg)", "8-g Meas. (W/kg)", "8-g Scaled (W/kg)", "APD Meas. (W/m2)", "APD Scaled (W/m2)"]) for tech in range(len(summary_results))]
