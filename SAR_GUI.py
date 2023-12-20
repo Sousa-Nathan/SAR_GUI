@@ -243,7 +243,7 @@ def summary_excel(filepath):
     filter_page.column_dimensions["P"].width = 15.72
     filter_page.column_dimensions["Q"].width = 16.58
     filter_page.column_dimensions["R"].width = 15.72
-    filter_page.column_dimensions["S"].width = 13.86
+    filter_page.column_dimensions["S"].width = 10.29
     filter_page.column_dimensions["T"].width = 10.29
     filter_page.column_dimensions["U"].width = 10.29
     filter_page.column_dimensions["V"].width = 13.29
@@ -1518,6 +1518,7 @@ def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1
     while True and wb_1 != "" and rr_out != "" or sr_out != "" or sec_out != "" or stx_out != "":
         tech_event, tech_values = tech_window.read()
         if tech_event in (sg.WINDOW_CLOSED, "Exit"):
+            data = None
             break
         
         if tech_event == "GSM":
@@ -1900,6 +1901,7 @@ def main_window():
                 
                 for key in keys_to_clear:
                     initial_window[key].update("")
+                    values[key] = ""
             
             if values["-REPORT_OUT-"] != "":        
                 reported_sar_workbook_filename = parse_reported_workbook_name(values["-Workbook_1-"])
@@ -1946,7 +1948,7 @@ def main_window():
                 summary_compare(cwd)
                 
             if values["-Workbook_1-"] != "":
-                rem_key = ["-REPORT_OUT-", "-REPORT_OUT_BROWSE-", "-SUM_OUT-", "-SUM_OUT_BROWSE-", "-SEC1_OUT-", "-SEC1_OUT_BROWSE-", "-SMTX_OUT-", "-SMTX_OUT_BROWSE-"]
+                rem_key = ["-REPORT_OUT-", "-REPORT_OUT_BROWSE-", "-SUM_OUT-", "-SUM_OUT_BROWSE-", "-SEC1_OUT-", "-SEC1_OUT_BROWSE-", "-SMTX_OUT-", "-SMTX_OUT_BROWSE-" "-WB1_IN_BROWSE-", "-WB2_IN_BROWSE-", "-WB3_IN_BROWSE-", "-WB4_IN_BROWSE-", "-WB5_IN_BROWSE-", "-WB6_IN_BROWSE-", "-WB7_IN_BROWSE-", "-WB8_IN_BROWSE-", "-WB9_IN_BROWSE-", "-WB10_IN_BROWSE-", "-WB11_IN_BROWSE-", "-WB12_IN_BROWSE-", "-WB13_IN_BROWSE-", "-WB14_IN_BROWSE-", "-WB15_IN_BROWSE-", "-WB16_IN_BROWSE-", "-WB17_IN_BROWSE-", "-WB18_IN_BROWSE-", "-WB19_IN_BROWSE-", "-WB20_IN_BROWSE-", "-WB21_IN_BROWSE-", "-WB22_IN_BROWSE-"]
                 
                 wbs_dict = {key: values[key] for key in values if key not in rem_key}
                 
@@ -1965,6 +1967,7 @@ def main_window():
             if event == "-TECH_BAND-":
                 try:
                     tech_band(wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], stx_out = values["-SMTX_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, stxf = smtx_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
+                    data = None
                 except UnboundLocalError:
                     sg.popup("Either nothing has been entered or a workbook directory is missing, please try again", button_color = ("white", "red"))
                     pass
