@@ -514,6 +514,21 @@ def sec1_excel(filepath):
     
     workbook.save(filename = filepath)
 
+def center_window(primary_window, new_window):
+    
+    
+    primary_window_x, primary_window_y = primary_window.current_location()
+    primary_window_width, primary_window_height = primary_window.size
+    new_win_width, new_win_height = new_window.size
+    
+    new_x_location = (primary_window_width // 2) - (new_win_width // 2) + primary_window_x
+    new_y_location = (primary_window_height // 2) - (new_win_height // 2) + primary_window_y
+    
+    new_window.move(new_x_location, new_y_location)
+    new_window.location = (new_x_location, new_y_location)
+    
+    return new_x_location, new_y_location
+
 def summary_compare(cwd):
     """
     Formats the workbook for readability.
@@ -590,7 +605,7 @@ def summary_compare(cwd):
     
     sum_compare_window.close()
 
-def gsm_tech_window():
+def gsm_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -607,11 +622,12 @@ def gsm_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    gsm_window = sg.Window("Select all that apply:", gsm_tech_list)
+    gsm_window = sg.Window("Select all that apply:", gsm_tech_list, finalize = True)
+    center_window(primary_window, new_window = gsm_window)
     
     while True:
         gsm_event, gsm_values = gsm_window.read()
@@ -632,7 +648,7 @@ def gsm_tech_window():
     
     return final_gsm_list
 
-def wcdma_tech_window():
+def wcdma_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -649,11 +665,12 @@ def wcdma_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    wcdma_window = sg.Window("Select all that apply:", wcdma_tech_list)
+    wcdma_window = sg.Window("Select all that apply:", wcdma_tech_list, finalize = True)
+    center_window(primary_window, new_window = wcdma_window)
     
     while True:
         wcdma_event, wcdma_values = wcdma_window.read()
@@ -674,7 +691,7 @@ def wcdma_tech_window():
     
     return final_wcdma_list
 
-def lte_tech_window():
+def lte_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -777,11 +794,12 @@ def lte_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    lte_window = sg.Window("Select all that apply:", lte_layout)
+    lte_window = sg.Window("Select all that apply:", lte_layout, finalize = True)
+    center_window(primary_window, new_window = lte_window)
     
     while True:
         lte_event, lte_values = lte_window.read()
@@ -802,7 +820,7 @@ def lte_tech_window():
     
     return final_lte_list
 
-def fr1_tech_window():
+def fr1_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -931,11 +949,12 @@ def fr1_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    fr1_window = sg.Window("Select all that apply:", fr1_layout)
+    fr1_window = sg.Window("Select all that apply:", fr1_layout, finalize = True)
+    center_window(primary_window, new_window = fr1_window)
     
     while True:
         fr1_event, fr1_values = fr1_window.read()
@@ -956,7 +975,7 @@ def fr1_tech_window():
     
     return final_fr1_list
 
-def wlan_tech_window():
+def wlan_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -990,11 +1009,12 @@ def wlan_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    wlan_window = sg.Window("Select all that apply:", wlan_tech_layout)
+    wlan_window = sg.Window("Select all that apply:", wlan_tech_layout, finalize = True)
+    center_window(primary_window, new_window = wlan_window)
     
     while True:
         wlan_event, wlan_values = wlan_window.read()
@@ -1015,7 +1035,7 @@ def wlan_tech_window():
     
     return final_wlan_list
 
-def bt_tech_window():
+def bt_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -1030,11 +1050,12 @@ def bt_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    bluetooth_window = sg.Window("Select all that apply:", bluetooth_tech_list)
+    bluetooth_window = sg.Window("Select all that apply:", bluetooth_tech_list, finalize = True)
+    center_window(primary_window, new_window = bluetooth_window)
     
     while True:
         bluetooth_event, bluetooth_values = bluetooth_window.read()
@@ -1055,7 +1076,7 @@ def bt_tech_window():
     
     return final_bluetooth_list
 
-def thread_tech_window():
+def thread_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -1069,11 +1090,12 @@ def thread_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    thread_window = sg.Window("Select all that apply:", thread_tech_list)
+    thread_window = sg.Window("Select all that apply:", thread_tech_list, finalize = True)
+    center_window(primary_window, new_window = thread_window)
     
     while True:
         thread_event, thread_values = thread_window.read()
@@ -1094,7 +1116,7 @@ def thread_tech_window():
     
     return final_thread_list
 
-def mss_tech_window():
+def mss_tech_window(primary_window):
     """
     Window for technology selection
 
@@ -1109,11 +1131,12 @@ def mss_tech_window():
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    mss_window = sg.Window("Select all that apply:", mss_tech_list)
+    mss_window = sg.Window("Select all that apply:", mss_tech_list, finalize = True)
+    center_window(primary_window, new_window = mss_window)
     
     while True:
         mss_event, mss_values = mss_window.read()
@@ -1134,7 +1157,7 @@ def mss_tech_window():
     
     return final_mss_list
 
-def reported_results(rr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd):
+def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd):
     """
     Collects all the variables needed to create the reported results raw
     workbook.
@@ -1156,11 +1179,12 @@ def reported_results(rr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd):
         [
             sg.Button("Yes", key = "Yes", button_color = ("black", "#D3D3D3")),
             sg.Button("AJ's Button", key = "AJ", button_color = ("pink", "#3CFF00"), font = ("Helvetica", 11, "bold")),
-            sg.CloseButton("No", button_color = ("white", "red"))
+            sg.Exit(button_text = "No", button_color = ("white", "red"))
         ]
     ]
     
-    reported_results = sg.Window("Generate Reported Restults Workbook", yes_no, element_justification = "center")
+    reported_results = sg.Window("Generate Reported Restults Workbook", yes_no, element_justification = "center", finalize = True)
+    center_window(primary_window, new_window = reported_results)
     
     if rr_out != "":
         while True:
@@ -1186,7 +1210,7 @@ def reported_results(rr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd):
                 
                 reported_excel(rwf)
                 
-                sg.popup("Done", button_color = ("black", "#D3D3D3"))
+                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = reported_results)))
                 
                 reported_results.close()
                 
@@ -1203,16 +1227,16 @@ def reported_results(rr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd):
                 
                 reported_excel(rwf)
                 
-                sg.popup("Done", button_color = ("black", "#D3D3D3"))
+                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = reported_results)))
                 
                 reported_results.close()
                 
         reported_results.close()
     
     else:
-        sg.popup("The Reported Results workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"))
+        sg.popup("The Reported Results workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = reported_results)))
 
-def summary_results(sr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd, exl):
+def summary_results(primary_window, sr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd, exl):
     """
     Collects all the variables needed to create the reported results raw
     workbook.
@@ -1282,11 +1306,12 @@ def summary_results(sr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd, exl):
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
             sg.Button("AJ's Button", key = "AJ", button_color = ("pink", "#3CFF00"), font = ("Helvetica", 11, "bold")),
-            sg.CloseButton("Close", button_color = ("black", "#D3D3D3"))
+            sg.Exit(button_text = "Close", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
-    summary_table = sg.Window("Generate Summary Table", transmitter_names, element_justification = "left")
+    summary_table = sg.Window("Generate Summary Table", transmitter_names, element_justification = "left", finalize = True)
+    center_window(primary_window, new_window = summary_table)
     
     if sr_out != "":
         while True:
@@ -1319,7 +1344,7 @@ def summary_results(sr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd, exl):
                 
                 summary_excel(swf)
                 
-                sg.popup("Done", button_color = ("black", "#D3D3D3"))
+                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = summary_table)))
                 
                 summary_table.close()
                 
@@ -1342,16 +1367,16 @@ def summary_results(sr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd, exl):
                 
                 summary_excel(swf)
                 
-                sg.popup("Done", button_color = ("black", "#D3D3D3"))
+                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = summary_table)))
                 
                 summary_table.close()
                 
         summary_table.close()
     
     else:
-        sg.popup("The Summary workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"))
+        sg.popup("The Summary workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = summary_table)))
 
-def sec1_results(sec_out, data, fcc, ised, cwd):
+def sec1_results(primary_window, sec_out, data, fcc, ised, cwd):
     """
     Parses through the data to generate the Section 1 table and
     variant test cases.
@@ -1369,11 +1394,12 @@ def sec1_results(sec_out, data, fcc, ised, cwd):
         
         [
             sg.Button("Yes", key = "Yes", button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("No", button_color = ("white", "red"))
+            sg.Exit(button_text = "No", button_color = ("white", "red"))
         ]
     ]
     
-    sec1_results = sg.Window("Generate Section 1 Workbook", yes_no, element_justification = "center")
+    sec1_results = sg.Window("Generate Section 1 Workbook", yes_no, element_justification = "center", finalize = True)
+    center_window(primary_window, new_window = sec1_results)
     
     if sec_out != "":
         while True:
@@ -1391,15 +1417,15 @@ def sec1_results(sec_out, data, fcc, ised, cwd):
                 sec1_excel(fcc)
                 sec1_excel(ised)
                 
-                sg.popup("Done", button_color = ("black", "#D3D3D3"))
+                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = sec1_results)))
                 
                 sec1_results.close()
         
         sec1_results.close()
     else:
-        sg.popup("The Section 1 workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"))
+        sg.popup("The Section 1 workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = sec1_results)))
 
-def smtx_results(stx_out, data, nwtl, wtl, rwf, swf, stxwf, cwd):
+def smtx_results(primary_window, stx_out, data, nwtl, wtl, rwf, swf, stxwf, cwd):
     """
     Generates a workbook with all the SAR data in one sheet
     
@@ -1419,11 +1445,12 @@ def smtx_results(stx_out, data, nwtl, wtl, rwf, swf, stxwf, cwd):
         
         [
             sg.Button("Yes", key = "Yes", button_color = ("black", "#D3D3D3")),
-            sg.CloseButton("No", button_color = ("white", "red"))
+            sg.Exit(button_text = "No", button_color = ("white", "red"))
         ]
     ]
     
-    smtx_results = sg.Window("Generate Smart Transmit Restults Workbook", yes_no, element_justification = "center")
+    smtx_results = sg.Window("Generate Smart Transmit Restults Workbook", yes_no, element_justification = "center", finalize = True)
+    center_window(primary_window, new_window = smtx_results)
     
     if stx_out != "":
         while True:
@@ -1449,16 +1476,16 @@ def smtx_results(stx_out, data, nwtl, wtl, rwf, swf, stxwf, cwd):
                 
                 reported_excel(stxwf)
                 
-                sg.popup("Done", button_color = ("black", "#D3D3D3"))
+                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = smtx_results)))
                 
                 smtx_results.close()
                 
         smtx_results.close()
     
     else:
-        sg.popup("The Smart Transmit directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"))
+        sg.popup("The Smart Transmit directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = smtx_results)))
 
-def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1isedf, stxf, cwd, data, exl):
+def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1isedf, stxf, cwd, data, exl):
     """
     Bulk of the program where it filters the raw SAR data, concatenates it into one dataframe,
     records the output directories for all the other sub-functions, and exposure conditions.
@@ -1504,7 +1531,8 @@ def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1
         ]
     ]
     
-    tech_window = sg.Window("Tech List", tech_layout, element_justification = "center")
+    tech_window = sg.Window("Tech List", tech_layout, element_justification = "center", finalize = True)
+    center_window(primary_window, new_window = tech_window)
     
     gsm_tech_list    = []
     wcdma_tech_list  = []
@@ -1523,49 +1551,49 @@ def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1
         
         if tech_event == "GSM":
             try:
-                gsm_tech_list = gsm_tech_window()
+                gsm_tech_list = gsm_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "W-CDMA":
             try:
-                wcdma_tech_list = wcdma_tech_window()
+                wcdma_tech_list = wcdma_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "LTE":
             try:
-                lte_tech_list = lte_tech_window()
+                lte_tech_list = lte_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "FR1":
             try:
-                fr1_tech_list = fr1_tech_window()
+                fr1_tech_list = fr1_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "WLAN":
             try:
-                wlan_tech_list = wlan_tech_window()
+                wlan_tech_list = wlan_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "Bluetooth":
             try:
-                bt_tech_list = bt_tech_window()
+                bt_tech_list = bt_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "Thread":
             try:
-                thread_tech_list = thread_tech_window()
+                thread_tech_list = thread_tech_window(primary_window = tech_window)
             except UnboundLocalError:
                 pass
         
         if tech_event == "MSS (L-Band)":
             try:
-                mss_tech_list = mss_tech_window()
+                mss_tech_list = mss_tech_window(primary_window = tech_window)
             except:
                 pass
         
@@ -1584,7 +1612,7 @@ def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1
             not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
             wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
             
-            reported_results(rr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd)
+            reported_results(primary_window = tech_window, rr_out = rr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd)
         
         if tech_event == "-SUMMARY_RESULTS-":
             gsm    = gsm_tech_list
@@ -1601,10 +1629,10 @@ def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1
             not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
             wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
             
-            summary_results(sr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd, exl = exl)
+            summary_results(primary_window = tech_window, sr_out = sr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd, exl = exl)
         
         if tech_event == "-SEC1_RESULTS-":
-            sec1_results(sec_out, data = data, fcc = sec1fccf, ised = sec1isedf, cwd = cwd)
+            sec1_results(primary_window = tech_window, sec_out = sec_out, data = data, fcc = sec1fccf, ised = sec1isedf, cwd = cwd)
         
         if tech_event == "-SMTX_RESULTS-":
             gsm    = gsm_tech_list
@@ -1621,13 +1649,13 @@ def tech_band(wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1
             not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
             wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
             
-            smtx_results(stx_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd)
+            smtx_results(primary_window = tech_window, stx_out = stx_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd)
         
     else:
         if wb_1 == "":
-            sg.popup("Missing the directory to Workbook 1; please enter the appropriate directory.", button_color = ("white", "red"))
+            sg.popup("Missing the directory to Workbook 1; please enter the appropriate directory.", button_color = ("white", "red"), location = (center_window(primary_window, new_window = tech_window)))
         elif rr_out == "" and sr_out == "" and sec_out == "" and stx_out == "":
-            sg.popup("Missing the directory to output the desired workbook; please enter the appropriate directory.", button_color = ("white", "red"))
+            sg.popup("Missing the directory to output the desired workbook; please enter the appropriate directory.", button_color = ("white", "red"), location = (center_window(primary_window, new_window = tech_window)))
             
     tech_window.close()
 
@@ -1888,7 +1916,7 @@ def main_window():
             ]
         ]
         
-        initial_window = sg.Window("Reported & Summary Table Generator", initial_layout)
+        initial_window = sg.Window("Reported & Summary Table Generator", initial_layout, finalize = True)
         
         while True:
             event, values = initial_window.read()
@@ -1966,10 +1994,12 @@ def main_window():
             
             if event == "-TECH_BAND-":
                 try:
-                    tech_band(wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], stx_out = values["-SMTX_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, stxf = smtx_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
-                    data = None
+                    tech_band(primary_window = initial_window, wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], stx_out = values["-SMTX_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, stxf = smtx_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
                 except UnboundLocalError:
-                    sg.popup("Either nothing has been entered or a workbook directory is missing, please try again", button_color = ("white", "red"))
+                    window_x_local, window_y_local = initial_window.current_location()
+                    window_width, window_height = initial_window.size
+                    
+                    sg.popup("Either nothing has been entered or a workbook directory is missing, please try again", title = "Missing Information", button_color = ("white", "red"), location = ((window_width // 2) + window_x_local, (window_height // 2) + window_y_local))
                     pass
         
         initial_window.close()
