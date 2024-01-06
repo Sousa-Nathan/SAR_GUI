@@ -195,6 +195,10 @@ def reported_excel(filepath):
             for cell in row:
                 cell.number_format = "0.000"
                 
+        for row in active_sheet["X2:X1000"]:
+            for cell in row:
+                cell.number_format = "0.00"
+                
         for cell in header_row:
             cell.style = header
     
