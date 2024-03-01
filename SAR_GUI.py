@@ -1130,7 +1130,9 @@ def mss_tech_window(primary_window):
     
     mss_tech_list = [
         [
-            sg.Checkbox("MSS (L-Band)", key = "MSS (L-Band)")
+            sg.Checkbox("MSS (L-Band)", key = "MSS (L-Band)"),
+            sg.Checkbox("NTN L-Band", key = "NTN L-Band"),
+            sg.Checkbox("NTN S-Band", key = "NTN S-Band")
         ],
         
         [
@@ -1523,7 +1525,7 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
             sg.Button("WLAN", key = "WLAN", button_color = ("black", "#D3D3D3")),
             sg.Button("Bluetooth", key = "Bluetooth", button_color = ("black", "#D3D3D3")),
             sg.Button("Thread", key = "Thread", button_color = ("black", "#D3D3D3")),
-            sg.Button("MSS (L-Band)", key = "MSS (L-Band)", button_color = ("black", "#D3D3D3"))
+            sg.Button("MSS/NTN", key = "MSS/NTN", button_color = ("black", "#D3D3D3"))
         ],
         
         [
@@ -1595,7 +1597,7 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
             except UnboundLocalError:
                 pass
         
-        if tech_event == "MSS (L-Band)":
+        if tech_event == "MSS/NTN":
             try:
                 mss_tech_list = mss_tech_window(primary_window = tech_window)
             except:
