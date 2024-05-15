@@ -31,8 +31,9 @@ def parse_reported_workbook_name(sprsht_fp):
     date = now.strftime("%Y_%m_%d")
     time = now.strftime("%H_%M_%S")
     reported_workbook_name = f"SAR_Date-{date}_Time-{time}.xlsx"
+    spatial_sum_workbook_name = f"Spatial_Sum_SAR_Date-{date}_Time-{time}.xlsx"
     
-    return reported_workbook_name
+    return reported_workbook_name, spatial_sum_workbook_name
 
 def parse_summary_workbook_name(sprsht_fp):
     """
@@ -846,10 +847,10 @@ def fr1_tech_window(primary_window):
         [sg.Checkbox("FR1 n20", key = "FR1 n20")],
         [sg.Checkbox("FR1 n24", key = "FR1 n24")],
         [sg.Checkbox("FR1 n25", key = "FR1 n25")],
-        [sg.Checkbox("FR1 n26", key = "FR1 n26")],
     ]
     
     fr1_tech_2 = [
+        [sg.Checkbox("FR1 n26", key = "FR1 n26")],
         [sg.Checkbox("FR1 n28", key = "FR1 n28")],
         [sg.Checkbox("FR1 n30", key = "FR1 n30")],
         [sg.Checkbox("FR1 n34", key = "FR1 n34")],
@@ -862,11 +863,11 @@ def fr1_tech_window(primary_window):
         [sg.Checkbox("FR1 n41 PC2", key = "FR1 n41 PC2")],
         [sg.Checkbox("FR1 n41 CE PC3", key = "FR1 n41 CE PC3")],
         [sg.Checkbox("FR1 n41 CE PC2", key = "FR1 n41 CE PC2")],
-        [sg.Checkbox("FR1 n46", key = "FR1 n46")],
-        [sg.Checkbox("FR1 n46 CE", key = "FR1 n46 CE")],
     ]
     
     fr1_tech_3 = [
+        [sg.Checkbox("FR1 n46", key = "FR1 n46")],
+        [sg.Checkbox("FR1 n46 CE", key = "FR1 n46 CE")],
         [sg.Checkbox("FR1 n47", key = "FR1 n47")],
         [sg.Checkbox("FR1 n48", key = "FR1 n48")],
         [sg.Checkbox("FR1 n48 CE", key = "FR1 n48 CE")],
@@ -879,11 +880,11 @@ def fr1_tech_window(primary_window):
         [sg.Checkbox("FR1 n71", key = "FR1 n71")],
         [sg.Checkbox("FR1 n74", key = "FR1 n74")],
         [sg.Checkbox("FR1 n77 PC3", key = "FR1 n77 PC3")],
-        [sg.Checkbox("FR1 n77 CE PC3", key = "FR1 n77 CE PC3")],
-        [sg.Checkbox("FR1 n77 (Block A) PC3", key = "FR1 n77 (Block A) PC3")],
     ]
     
     fr1_tech_4 = [
+        [sg.Checkbox("FR1 n77 CE PC3", key = "FR1 n77 CE PC3")],
+        [sg.Checkbox("FR1 n77 (Block A) PC3", key = "FR1 n77 (Block A) PC3")],
         [sg.Checkbox("FR1 n77 (Block B) PC3", key = "FR1 n77 (Block B) PC3")],
         [sg.Checkbox("FR1 n77 CE (Block B) PC3", key = "FR1 n77 CE (Block B) PC3")],
         [sg.Checkbox("FR1 n77 (Block C) PC3", key = "FR1 n77 (Block C) PC3")],
@@ -896,11 +897,11 @@ def fr1_tech_window(primary_window):
         [sg.Checkbox("FR1 n77 (Block C) PC2", key = "FR1 n77 (Block C) PC2")],
         [sg.Checkbox("FR1 n77 CE (Block C) PC2", key = "FR1 n77 CE (Block C) PC2")],
         [sg.Checkbox("FR1 n78 PC3", key = "FR1 n78 PC3")],
-        [sg.Checkbox("FR1 n78 (Block A) PC3", key = "FR1 n78 (Block A) PC3")],
-        [sg.Checkbox("FR1 n78 (Block B) PC3", key = "FR1 n78 (Block B) PC3")],
     ]
     
     fr1_tech_5 = [
+        [sg.Checkbox("FR1 n78 (Block A) PC3", key = "FR1 n78 (Block A) PC3")],
+        [sg.Checkbox("FR1 n78 (Block B) PC3", key = "FR1 n78 (Block B) PC3")],
         [sg.Checkbox("FR1 n78 (Block C) PC3", key = "FR1 n78 (Block C) PC3")],
         [sg.Checkbox("FR1 n78 IC PC3", key = "FR1 n78 IC PC3")],
         [sg.Checkbox("FR1 n78 CE PC3", key = "FR1 n78 CE PC3")],
@@ -914,11 +915,11 @@ def fr1_tech_window(primary_window):
         [sg.Checkbox("FR1 n79 CE", key = "FR1 n79 CE")],
         [sg.Checkbox("FR1 n79 (Narrow) PC3", key = "FR1 n79 (Narrow) PC3")],
         [sg.Checkbox("FR1 n79 (Narrow) PC2", key = "FR1 n79 (Narrow) PC2")],
-        [sg.Checkbox("FR1 n85", key = "FR1 n85")],
-        [sg.Checkbox("FR1 n90", key = "FR1 n90")],
     ]
     
     fr1_tech_6 = [
+        [sg.Checkbox("FR1 n85", key = "FR1 n85")],
+        [sg.Checkbox("FR1 n90", key = "FR1 n90")],
         [sg.Checkbox("FR1 n90 CE", key = "FR1 n90 CE")],
         [sg.Checkbox("FR1 n91", key = "FR1 n91")],
         [sg.Checkbox("FR1 n92", key = "FR1 n92")],
@@ -932,8 +933,6 @@ def fr1_tech_window(primary_window):
         [sg.Checkbox("FR1 n102 CE", key = "FR1 n102 CE")],
         [sg.Checkbox("FR1 n104", key = "FR1 n104")],
         [sg.Checkbox("FR1 n104 CE", key = "FR1 n104 CE")],
-        [sg.Checkbox("FR1 n255", key = "FR1 n255")],
-        [sg.Checkbox("FR1 n256", key = "FR1 n256")],
     ]
     
     fr1_layout =[
@@ -1163,7 +1162,7 @@ def mss_tech_window(primary_window):
     
     return final_mss_list
 
-def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd):
+def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, sssf, cwd):
     """
     Collects all the variables needed to create the reported results raw
     workbook.
@@ -1203,16 +1202,18 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, c
                 if not nwtl:
                     print("There is no non-Wi-Fi Data.")
                 else:
-                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
+                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                     
                     stuff_for_not_wlan.reported_tech_results()
+                    stuff_for_not_wlan.spatial_sum_sar()
                 
                 if not wtl:
                     print("There is no Wi-Fi Data.")
                 else:
-                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
+                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                     
                     stuff_for_wlan.reported_tech_results()
+                    stuff_for_wlan.spatial_sum_sar()
                 
                 reported_excel(rwf)
                 
@@ -1491,7 +1492,7 @@ def smtx_results(primary_window, stx_out, data, nwtl, wtl, rwf, swf, stxwf, cwd)
     else:
         sg.popup("The Smart Transmit directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = smtx_results)))
 
-def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1isedf, stxf, cwd, data, exl):
+def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1isedf, stxf, sssf, cwd, data, exl):
     """
     Bulk of the program where it filters the raw SAR data, concatenates it into one dataframe,
     records the output directories for all the other sub-functions, and exposure conditions.
@@ -1618,7 +1619,7 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
             not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
             wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
             
-            reported_results(primary_window = tech_window, rr_out = rr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd)
+            reported_results(primary_window = tech_window, rr_out = rr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, sssf = sssf, cwd = cwd)
         
         if tech_event == "-SUMMARY_RESULTS-":
             gsm    = gsm_tech_list
@@ -1938,13 +1939,15 @@ def main_window():
                     values[key] = ""
             
             if values["-REPORT_OUT-"] != "":        
-                reported_sar_workbook_filename = parse_reported_workbook_name(values["-Workbook_1-"])
+                reported_sar_workbook_filename, spatial_sum_sar_workbook_filename = parse_reported_workbook_name(values["-Workbook_1-"])
                 reported_sar_workbook_directory = os.path.normpath(values["-REPORT_OUT_BROWSE-"])
                 reported_sar_workbook_filepath = os.path.join(reported_sar_workbook_directory, reported_sar_workbook_filename) # reported_sar_workbook_directory + "/" + reported_sar_workbook_filename
+                spatial_sum_sar_workbook_filepath = os.path.join(reported_sar_workbook_directory, spatial_sum_sar_workbook_filename)
                 
                 # print(reported_sar_workbook_filepath)
             else:
                 reported_sar_workbook_filepath = ""
+                spatial_sum_sar_workbook_filepath = ""
             
             if values["-SUM_OUT-"] != "":
                 worst_case_summary_sar_workbook_filename = parse_summary_workbook_name(values["-Workbook_1-"])
@@ -2000,7 +2003,7 @@ def main_window():
             
             if event == "-TECH_BAND-":
                 try:
-                    tech_band(primary_window = initial_window, wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], stx_out = values["-SMTX_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, stxf = smtx_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
+                    tech_band(primary_window = initial_window, wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], stx_out = values["-SMTX_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, stxf = smtx_sar_workbook_filepath, sssf = spatial_sum_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
                 except UnboundLocalError:
                     window_x_local, window_y_local = initial_window.current_location()
                     window_width, window_height = initial_window.size
