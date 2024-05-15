@@ -205,7 +205,7 @@ def reported_excel(filepath):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Armando Gonzalez Hernandez", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "Jennifer Bunnell", "John Moestopo", "Kiara Davis", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Ruben Lozano", "Samuel Yarman", "Tony Soares", "Truc Tran", "Ysidra van Kempen", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -304,7 +304,7 @@ def summary_excel(filepath):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Armando Gonzalez Hernandez", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "Jennifer Bunnell", "John Moestopo", "Kiara Davis", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Ruben Lozano", "Samuel Yarman", "Tony Soares", "Truc Tran", "Ysidra van Kempen", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -402,7 +402,7 @@ def summary_compare_excel(filepath, scwb1, scwb2):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Armando Gonzalez Hernandez", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "Jennifer Bunnell", "John Moestopo", "Kiara Davis", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Ruben Lozano", "Samuel Yarman", "Tony Soares", "Truc Tran", "Ysidra van Kempen", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -512,7 +512,7 @@ def sec1_excel(filepath):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Armando Gonzalez Hernandez", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "Jennifer Bunnell", "John Moestopo", "Kiara Davis", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Ruben Lozano", "Samuel Yarman", "Tony Soares", "Truc Tran", "Ysidra van Kempen", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -620,9 +620,9 @@ def gsm_tech_window(primary_window):
     
     gsm_tech_list = [
         [sg.Checkbox("GSM 850", key = "GSM 850")],
-        [sg.Checkbox("GSM E-900", key = "GSM E-900")],
-        [sg.Checkbox("GSM R-900", key = "GSM R-900")],
-        [sg.Checkbox("GSM 1800", key = "GSM 1800")],
+        # [sg.Checkbox("GSM E-900", key = "GSM E-900")],
+        # [sg.Checkbox("GSM R-900", key = "GSM R-900")],
+        # [sg.Checkbox("GSM 1800", key = "GSM 1800")],
         [sg.Checkbox("GSM 1900", key = "GSM 1900")],
         
         [
@@ -662,11 +662,11 @@ def wcdma_tech_window(primary_window):
     """
     
     wcdma_tech_list = [
-        [sg.Checkbox("W-CDMA B1", key = "W-CDMA B1")],
+        # [sg.Checkbox("W-CDMA B1", key = "W-CDMA B1")],
         [sg.Checkbox("W-CDMA B2", key = "W-CDMA B2")],
         [sg.Checkbox("W-CDMA B4", key = "W-CDMA B4")],
         [sg.Checkbox("W-CDMA B5", key = "W-CDMA B5")],
-        [sg.Checkbox("W-CDMA B8", key = "W-CDMA B8")],
+        # [sg.Checkbox("W-CDMA B8", key = "W-CDMA B8")],
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
@@ -704,97 +704,128 @@ def lte_tech_window(primary_window):
         list: List of selected technologies
     """
     
+    # lte_tech_1 = [
+    #     [sg.Checkbox("LTE B1", key = "LTE B1")],
+    #     [sg.Checkbox("LTE B2", key = "LTE B2")],
+    #     [sg.Checkbox("LTE B3", key = "LTE B3")],
+    #     [sg.Checkbox("LTE B4", key = "LTE B4")],
+    #     [sg.Checkbox("LTE B5", key = "LTE B5")],
+    #     [sg.Checkbox("LTE B7", key = "LTE B7")],
+    #     [sg.Checkbox("LTE B8", key = "LTE B8")],
+    #     [sg.Checkbox("LTE B11", key = "LTE B11")],
+    #     [sg.Checkbox("LTE B12", key = "LTE B12")],
+    #     [sg.Checkbox("LTE B13", key = "LTE B13")],
+    # ]
+    
+    # lte_tech_2 = [
+    #     [sg.Checkbox("LTE B14", key = "LTE B14")],
+    #     [sg.Checkbox("LTE B17", key = "LTE B17")],
+    #     [sg.Checkbox("LTE B18", key = "LTE B18")],
+    #     [sg.Checkbox("LTE B19", key = "LTE B19")],
+    #     [sg.Checkbox("LTE B20", key = "LTE B20")],
+    #     [sg.Checkbox("LTE B21", key = "LTE B21")],
+    #     [sg.Checkbox("LTE B22", key = "LTE B22")],
+    #     [sg.Checkbox("LTE B24", key = "LTE B24")],
+    #     [sg.Checkbox("LTE B25", key = "LTE B25")],
+    #     [sg.Checkbox("LTE B26", key = "LTE B26")],
+    # ]
+    
+    # lte_tech_3 = [
+    #     [sg.Checkbox("LTE B27", key = "LTE B27")],
+    #     [sg.Checkbox("LTE B28", key = "LTE B28")],
+    #     [sg.Checkbox("LTE B30", key = "LTE B30")],
+    #     [sg.Checkbox("LTE B31", key = "LTE B31")],
+    #     [sg.Checkbox("LTE B33", key = "LTE B33")],
+    #     [sg.Checkbox("LTE B34", key = "LTE B34")],
+    #     [sg.Checkbox("LTE B35", key = "LTE B35")],
+    #     [sg.Checkbox("LTE B36", key = "LTE B36")],
+    #     [sg.Checkbox("LTE B37", key = "LTE B37")],
+    #     [sg.Checkbox("LTE B38", key = "LTE B38")],
+    # ]
+    
+    # lte_tech_4 = [
+    #     [sg.Checkbox("LTE B39", key = "LTE B39")],
+    #     [sg.Checkbox("LTE B40 (Block A)", key = "LTE B40 (Block A)")],
+    #     [sg.Checkbox("LTE B40 (Block B)", key = "LTE B40 (Block B)")],
+    #     [sg.Checkbox("LTE B40", key = "LTE B40")],
+    #     [sg.Checkbox("LTE B41 FCC PC3", key = "LTE B41 FCC PC3")],
+    #     [sg.Checkbox("LTE B41 FCC PC2", key = "LTE B41 FCC PC2")],
+    #     [sg.Checkbox("LTE B42", key = "LTE B42")],
+    #     [sg.Checkbox("LTE B43", key = "LTE B43")],
+    #     [sg.Checkbox("LTE B44", key = "LTE B44")],
+    #     [sg.Checkbox("LTE B45", key = "LTE B45")],
+    # ]
+    
+    # lte_tech_5 = [
+    #     [sg.Checkbox("LTE B46 NAR", key = "LTE B46 NAR")],
+    #     [sg.Checkbox("LTE B46 CE", key = "LTE B46 CE")],
+    #     [sg.Checkbox("LTE B47", key = "LTE B47")],
+    #     [sg.Checkbox("LTE B48", key = "LTE B48")],
+    #     [sg.Checkbox("LTE B49", key = "LTE B49")],
+    #     [sg.Checkbox("LTE B50", key = "LTE B50")],
+    #     [sg.Checkbox("LTE B51", key = "LTE B51")],
+    #     [sg.Checkbox("LTE B52", key = "LTE B52")],
+    #     [sg.Checkbox("LTE B53", key = "LTE B53")],
+    #     [sg.Checkbox("LTE B65", key = "LTE B65")],
+    # ]
+    
+    # lte_tech_6 = [
+    #     [sg.Checkbox("LTE B66", key = "LTE B66")],
+    #     [sg.Checkbox("LTE B68", key = "LTE B68")],
+    #     [sg.Checkbox("LTE B70", key = "LTE B70")],
+    #     [sg.Checkbox("LTE B71", key = "LTE B71")],
+    #     [sg.Checkbox("LTE B72", key = "LTE B72")],
+    #     [sg.Checkbox("LTE B73", key = "LTE B73")],
+    #     [sg.Checkbox("LTE B74", key = "LTE B74")],
+    #     [sg.Checkbox("LTE B85", key = "LTE B85")],
+    #     [sg.Checkbox("LTE B87", key = "LTE B87")],
+    #     [sg.Checkbox("LTE B88", key = "LTE B88")],
+    # ]
+    
     lte_tech_1 = [
-        [sg.Checkbox("LTE B1", key = "LTE B1")],
         [sg.Checkbox("LTE B2", key = "LTE B2")],
-        [sg.Checkbox("LTE B3", key = "LTE B3")],
         [sg.Checkbox("LTE B4", key = "LTE B4")],
         [sg.Checkbox("LTE B5", key = "LTE B5")],
         [sg.Checkbox("LTE B7", key = "LTE B7")],
-        [sg.Checkbox("LTE B8", key = "LTE B8")],
-        [sg.Checkbox("LTE B11", key = "LTE B11")],
         [sg.Checkbox("LTE B12", key = "LTE B12")],
         [sg.Checkbox("LTE B13", key = "LTE B13")],
+        [sg.Checkbox("LTE B14", key = "LTE B14")],
+        [sg.Checkbox("LTE B17", key = "LTE B17")],
+        [sg.Checkbox("LTE B25", key = "LTE B25")],
     ]
     
     lte_tech_2 = [
-        [sg.Checkbox("LTE B14", key = "LTE B14")],
-        [sg.Checkbox("LTE B17", key = "LTE B17")],
-        [sg.Checkbox("LTE B18", key = "LTE B18")],
-        [sg.Checkbox("LTE B19", key = "LTE B19")],
-        [sg.Checkbox("LTE B20", key = "LTE B20")],
-        [sg.Checkbox("LTE B21", key = "LTE B21")],
-        [sg.Checkbox("LTE B22", key = "LTE B22")],
-        [sg.Checkbox("LTE B24", key = "LTE B24")],
-        [sg.Checkbox("LTE B25", key = "LTE B25")],
         [sg.Checkbox("LTE B26", key = "LTE B26")],
-    ]
-    
-    lte_tech_3 = [
-        [sg.Checkbox("LTE B27", key = "LTE B27")],
-        [sg.Checkbox("LTE B28", key = "LTE B28")],
         [sg.Checkbox("LTE B30", key = "LTE B30")],
-        [sg.Checkbox("LTE B31", key = "LTE B31")],
-        [sg.Checkbox("LTE B33", key = "LTE B33")],
-        [sg.Checkbox("LTE B34", key = "LTE B34")],
-        [sg.Checkbox("LTE B35", key = "LTE B35")],
-        [sg.Checkbox("LTE B36", key = "LTE B36")],
-        [sg.Checkbox("LTE B37", key = "LTE B37")],
         [sg.Checkbox("LTE B38", key = "LTE B38")],
-    ]
-    
-    lte_tech_4 = [
-        [sg.Checkbox("LTE B39", key = "LTE B39")],
-        [sg.Checkbox("LTE B40 (Block A)", key = "LTE B40 (Block A)")],
-        [sg.Checkbox("LTE B40 (Block B)", key = "LTE B40 (Block B)")],
-        [sg.Checkbox("LTE B40", key = "LTE B40")],
-        [sg.Checkbox("LTE B41 FCC PC3", key = "LTE B41 FCC PC3")],
-        [sg.Checkbox("LTE B41 FCC PC2", key = "LTE B41 FCC PC2")],
-        [sg.Checkbox("LTE B42", key = "LTE B42")],
-        [sg.Checkbox("LTE B43", key = "LTE B43")],
-        [sg.Checkbox("LTE B44", key = "LTE B44")],
-        [sg.Checkbox("LTE B45", key = "LTE B45")],
-    ]
-    
-    lte_tech_5 = [
-        [sg.Checkbox("LTE B46 NAR", key = "LTE B46 NAR")],
-        [sg.Checkbox("LTE B46 CE", key = "LTE B46 CE")],
-        [sg.Checkbox("LTE B47", key = "LTE B47")],
+        [sg.Checkbox("LTE B41 PC3", key = "LTE B41 PC3")],
+        [sg.Checkbox("LTE B41 PC2", key = "LTE B41 PC2")],
         [sg.Checkbox("LTE B48", key = "LTE B48")],
-        [sg.Checkbox("LTE B49", key = "LTE B49")],
-        [sg.Checkbox("LTE B50", key = "LTE B50")],
-        [sg.Checkbox("LTE B51", key = "LTE B51")],
-        [sg.Checkbox("LTE B52", key = "LTE B52")],
         [sg.Checkbox("LTE B53", key = "LTE B53")],
-        [sg.Checkbox("LTE B65", key = "LTE B65")],
-    ]
-    
-    lte_tech_6 = [
         [sg.Checkbox("LTE B66", key = "LTE B66")],
-        [sg.Checkbox("LTE B68", key = "LTE B68")],
-        [sg.Checkbox("LTE B70", key = "LTE B70")],
         [sg.Checkbox("LTE B71", key = "LTE B71")],
-        [sg.Checkbox("LTE B72", key = "LTE B72")],
-        [sg.Checkbox("LTE B73", key = "LTE B73")],
-        [sg.Checkbox("LTE B74", key = "LTE B74")],
-        [sg.Checkbox("LTE B85", key = "LTE B85")],
-        [sg.Checkbox("LTE B87", key = "LTE B87")],
-        [sg.Checkbox("LTE B88", key = "LTE B88")],
     ]
     
     lte_layout =[
+        # [
+        #     sg.Column(lte_tech_1, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(lte_tech_2, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(lte_tech_3, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(lte_tech_4, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(lte_tech_5, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(lte_tech_6, element_justification = "left"),
+        # ],
+        
         [
             sg.Column(lte_tech_1, element_justification = "left"),
             sg.VerticalSeparator(),
             sg.Column(lte_tech_2, element_justification = "left"),
             sg.VerticalSeparator(),
-            sg.Column(lte_tech_3, element_justification = "left"),
-            sg.VerticalSeparator(),
-            sg.Column(lte_tech_4, element_justification = "left"),
-            sg.VerticalSeparator(),
-            sg.Column(lte_tech_5, element_justification = "left"),
-            sg.VerticalSeparator(),
-            sg.Column(lte_tech_6, element_justification = "left"),
         ],
         
         [
@@ -833,109 +864,159 @@ def fr1_tech_window(primary_window):
         list: List of selected technologies
     """
     
+    # fr1_tech_1 = [
+    #     [sg.Checkbox("FR1 n1", key = "FR1 n1")],
+    #     [sg.Checkbox("FR1 n2", key = "FR1 n2")],
+    #     [sg.Checkbox("FR1 n3", key = "FR1 n3")],
+    #     [sg.Checkbox("FR1 n5", key = "FR1 n5")],
+    #     [sg.Checkbox("FR1 n7", key = "FR1 n7")],
+    #     [sg.Checkbox("FR1 n8", key = "FR1 n8")],
+    #     [sg.Checkbox("FR1 n12", key = "FR1 n12")],
+    #     [sg.Checkbox("FR1 n13", key = "FR1 n13")],
+    #     [sg.Checkbox("FR1 n14", key = "FR1 n14")],
+    #     [sg.Checkbox("FR1 n18", key = "FR1 n18")],
+    #     [sg.Checkbox("FR1 n20", key = "FR1 n20")],
+    #     [sg.Checkbox("FR1 n24", key = "FR1 n24")],
+    #     [sg.Checkbox("FR1 n25", key = "FR1 n25")],
+    # ]
+    
+    # fr1_tech_2 = [
+    #     [sg.Checkbox("FR1 n26", key = "FR1 n26")],
+    #     [sg.Checkbox("FR1 n28", key = "FR1 n28")],
+    #     [sg.Checkbox("FR1 n30", key = "FR1 n30")],
+    #     [sg.Checkbox("FR1 n34", key = "FR1 n34")],
+    #     [sg.Checkbox("FR1 n38", key = "FR1 n38")],
+    #     [sg.Checkbox("FR1 n40", key = "FR1 n40")],
+    #     [sg.Checkbox("FR1 n40 (Block A)", key = "FR1 n40 (Block A)")],
+    #     [sg.Checkbox("FR1 n40 (Block B)", key = "FR1 n40 (Block B)")],
+    #     [sg.Checkbox("FR1 n40 CE", key = "FR1 n40 CE")],
+    #     [sg.Checkbox("FR1 n41 PC3", key = "FR1 n41 PC3")],
+    #     [sg.Checkbox("FR1 n41 PC2", key = "FR1 n41 PC2")],
+    #     [sg.Checkbox("FR1 n41 CE PC3", key = "FR1 n41 CE PC3")],
+    #     [sg.Checkbox("FR1 n41 CE PC2", key = "FR1 n41 CE PC2")],
+    # ]
+    
+    # fr1_tech_3 = [
+    #     [sg.Checkbox("FR1 n46", key = "FR1 n46")],
+    #     [sg.Checkbox("FR1 n46 CE", key = "FR1 n46 CE")],
+    #     [sg.Checkbox("FR1 n47", key = "FR1 n47")],
+    #     [sg.Checkbox("FR1 n48", key = "FR1 n48")],
+    #     [sg.Checkbox("FR1 n48 CE", key = "FR1 n48 CE")],
+    #     [sg.Checkbox("FR1 n50", key = "FR1 n50")],
+    #     [sg.Checkbox("FR1 n51", key = "FR1 n51")],
+    #     [sg.Checkbox("FR1 n53", key = "FR1 n53")],
+    #     [sg.Checkbox("FR1 n65", key = "FR1 n65")],
+    #     [sg.Checkbox("FR1 n66", key = "FR1 n66")],
+    #     [sg.Checkbox("FR1 n70", key = "FR1 n70")],
+    #     [sg.Checkbox("FR1 n71", key = "FR1 n71")],
+    #     [sg.Checkbox("FR1 n74", key = "FR1 n74")],
+    #     [sg.Checkbox("FR1 n77 PC3", key = "FR1 n77 PC3")],
+    # ]
+    
+    # fr1_tech_4 = [
+    #     [sg.Checkbox("FR1 n77 CE PC3", key = "FR1 n77 CE PC3")],
+    #     [sg.Checkbox("FR1 n77 (Block A) PC3", key = "FR1 n77 (Block A) PC3")],
+    #     [sg.Checkbox("FR1 n77 (Block B) PC3", key = "FR1 n77 (Block B) PC3")],
+    #     [sg.Checkbox("FR1 n77 CE (Block B) PC3", key = "FR1 n77 CE (Block B) PC3")],
+    #     [sg.Checkbox("FR1 n77 (Block C) PC3", key = "FR1 n77 (Block C) PC3")],
+    #     [sg.Checkbox("FR1 n77 CE (Block C) PC3", key = "FR1 n77 CE (Block C) PC3")],
+    #     [sg.Checkbox("FR1 n77 PC2", key = "FR1 n77 PC2")],
+    #     [sg.Checkbox("FR1 n77 CE PC2", key = "FR1 n77 CE PC2")],
+    #     [sg.Checkbox("FR1 n77 (Block A) PC2", key = "FR1 n77 (Block A) PC2")],
+    #     [sg.Checkbox("FR1 n77 (Block B) PC2", key = "FR1 n77 (Block B) PC2")],
+    #     [sg.Checkbox("FR1 n77 CE (Block B) PC2", key = "FR1 n77 CE (Block B) PC2")],
+    #     [sg.Checkbox("FR1 n77 (Block C) PC2", key = "FR1 n77 (Block C) PC2")],
+    #     [sg.Checkbox("FR1 n77 CE (Block C) PC2", key = "FR1 n77 CE (Block C) PC2")],
+    #     [sg.Checkbox("FR1 n78 PC3", key = "FR1 n78 PC3")],
+    # ]
+    
+    # fr1_tech_5 = [
+    #     [sg.Checkbox("FR1 n78 (Block A) PC3", key = "FR1 n78 (Block A) PC3")],
+    #     [sg.Checkbox("FR1 n78 (Block B) PC3", key = "FR1 n78 (Block B) PC3")],
+    #     [sg.Checkbox("FR1 n78 (Block C) PC3", key = "FR1 n78 (Block C) PC3")],
+    #     [sg.Checkbox("FR1 n78 IC PC3", key = "FR1 n78 IC PC3")],
+    #     [sg.Checkbox("FR1 n78 CE PC3", key = "FR1 n78 CE PC3")],
+    #     [sg.Checkbox("FR1 n78 PC2", key = "FR1 n78 PC2")],
+    #     [sg.Checkbox("FR1 n78 (Block A) PC2", key = "FR1 n78 (Block A) PC2")],
+    #     [sg.Checkbox("FR1 n78 (Block B) PC2", key = "FR1 n78 (Block B) PC2")],
+    #     [sg.Checkbox("FR1 n78 (Block C) PC2", key = "FR1 n78 (Block C) PC2")],
+    #     [sg.Checkbox("FR1 n78 IC PC2", key = "FR1 n78 IC PC2")],
+    #     [sg.Checkbox("FR1 n78 CE PC2", key = "FR1 n78 CE PC2")],
+    #     [sg.Checkbox("FR1 n79", key = "FR1 n79")],
+    #     [sg.Checkbox("FR1 n79 CE", key = "FR1 n79 CE")],
+    #     [sg.Checkbox("FR1 n79 (Narrow) PC3", key = "FR1 n79 (Narrow) PC3")],
+    #     [sg.Checkbox("FR1 n79 (Narrow) PC2", key = "FR1 n79 (Narrow) PC2")],
+    # ]
+    
+    # fr1_tech_6 = [
+    #     [sg.Checkbox("FR1 n85", key = "FR1 n85")],
+    #     [sg.Checkbox("FR1 n90", key = "FR1 n90")],
+    #     [sg.Checkbox("FR1 n90 CE", key = "FR1 n90 CE")],
+    #     [sg.Checkbox("FR1 n91", key = "FR1 n91")],
+    #     [sg.Checkbox("FR1 n92", key = "FR1 n92")],
+    #     [sg.Checkbox("FR1 n93", key = "FR1 n93")],
+    #     [sg.Checkbox("FR1 n94", key = "FR1 n94")],
+    #     [sg.Checkbox("FR1 n96", key = "FR1 n96")],
+    #     [sg.Checkbox("FR1 n96 CE", key = "FR1 n96 CE")],
+    #     [sg.Checkbox("FR1 n100", key = "FR1 n100")],
+    #     [sg.Checkbox("FR1 n101", key = "FR1 n101")],
+    #     [sg.Checkbox("FR1 n102", key = "FR1 n102")],
+    #     [sg.Checkbox("FR1 n102 CE", key = "FR1 n102 CE")],
+    #     [sg.Checkbox("FR1 n104", key = "FR1 n104")],
+    #     [sg.Checkbox("FR1 n104 CE", key = "FR1 n104 CE")],
+    # ]
+    
     fr1_tech_1 = [
-        [sg.Checkbox("FR1 n1", key = "FR1 n1")],
         [sg.Checkbox("FR1 n2", key = "FR1 n2")],
-        [sg.Checkbox("FR1 n3", key = "FR1 n3")],
         [sg.Checkbox("FR1 n5", key = "FR1 n5")],
         [sg.Checkbox("FR1 n7", key = "FR1 n7")],
-        [sg.Checkbox("FR1 n8", key = "FR1 n8")],
         [sg.Checkbox("FR1 n12", key = "FR1 n12")],
-        [sg.Checkbox("FR1 n13", key = "FR1 n13")],
         [sg.Checkbox("FR1 n14", key = "FR1 n14")],
-        [sg.Checkbox("FR1 n18", key = "FR1 n18")],
-        [sg.Checkbox("FR1 n20", key = "FR1 n20")],
-        [sg.Checkbox("FR1 n24", key = "FR1 n24")],
         [sg.Checkbox("FR1 n25", key = "FR1 n25")],
+        [sg.Checkbox("FR1 n26", key = "FR1 n26")],
+        [sg.Checkbox("FR1 n30", key = "FR1 n30")],
+        [sg.Checkbox("FR1 n38", key = "FR1 n38")],
     ]
     
     fr1_tech_2 = [
-        [sg.Checkbox("FR1 n26", key = "FR1 n26")],
-        [sg.Checkbox("FR1 n28", key = "FR1 n28")],
-        [sg.Checkbox("FR1 n30", key = "FR1 n30")],
-        [sg.Checkbox("FR1 n34", key = "FR1 n34")],
-        [sg.Checkbox("FR1 n38", key = "FR1 n38")],
-        [sg.Checkbox("FR1 n40", key = "FR1 n40")],
-        [sg.Checkbox("FR1 n40 (Block A)", key = "FR1 n40 (Block A)")],
-        [sg.Checkbox("FR1 n40 (Block B)", key = "FR1 n40 (Block B)")],
-        [sg.Checkbox("FR1 n40 CE", key = "FR1 n40 CE")],
         [sg.Checkbox("FR1 n41 PC3", key = "FR1 n41 PC3")],
         [sg.Checkbox("FR1 n41 PC2", key = "FR1 n41 PC2")],
-        [sg.Checkbox("FR1 n41 CE PC3", key = "FR1 n41 CE PC3")],
-        [sg.Checkbox("FR1 n41 CE PC2", key = "FR1 n41 CE PC2")],
-    ]
-    
-    fr1_tech_3 = [
-        [sg.Checkbox("FR1 n46", key = "FR1 n46")],
-        [sg.Checkbox("FR1 n46 CE", key = "FR1 n46 CE")],
-        [sg.Checkbox("FR1 n47", key = "FR1 n47")],
         [sg.Checkbox("FR1 n48", key = "FR1 n48")],
-        [sg.Checkbox("FR1 n48 CE", key = "FR1 n48 CE")],
-        [sg.Checkbox("FR1 n50", key = "FR1 n50")],
-        [sg.Checkbox("FR1 n51", key = "FR1 n51")],
         [sg.Checkbox("FR1 n53", key = "FR1 n53")],
-        [sg.Checkbox("FR1 n65", key = "FR1 n65")],
         [sg.Checkbox("FR1 n66", key = "FR1 n66")],
         [sg.Checkbox("FR1 n70", key = "FR1 n70")],
         [sg.Checkbox("FR1 n71", key = "FR1 n71")],
-        [sg.Checkbox("FR1 n74", key = "FR1 n74")],
         [sg.Checkbox("FR1 n77 PC3", key = "FR1 n77 PC3")],
-    ]
-    
-    fr1_tech_4 = [
-        [sg.Checkbox("FR1 n77 CE PC3", key = "FR1 n77 CE PC3")],
         [sg.Checkbox("FR1 n77 (Block A) PC3", key = "FR1 n77 (Block A) PC3")],
-        [sg.Checkbox("FR1 n77 (Block B) PC3", key = "FR1 n77 (Block B) PC3")],
-        [sg.Checkbox("FR1 n77 CE (Block B) PC3", key = "FR1 n77 CE (Block B) PC3")],
-        [sg.Checkbox("FR1 n77 (Block C) PC3", key = "FR1 n77 (Block C) PC3")],
-        [sg.Checkbox("FR1 n77 CE (Block C) PC3", key = "FR1 n77 CE (Block C) PC3")],
-        [sg.Checkbox("FR1 n77 PC2", key = "FR1 n77 PC2")],
-        [sg.Checkbox("FR1 n77 CE PC2", key = "FR1 n77 CE PC2")],
-        [sg.Checkbox("FR1 n77 (Block A) PC2", key = "FR1 n77 (Block A) PC2")],
-        [sg.Checkbox("FR1 n77 (Block B) PC2", key = "FR1 n77 (Block B) PC2")],
-        [sg.Checkbox("FR1 n77 CE (Block B) PC2", key = "FR1 n77 CE (Block B) PC2")],
-        [sg.Checkbox("FR1 n77 (Block C) PC2", key = "FR1 n77 (Block C) PC2")],
-        [sg.Checkbox("FR1 n77 CE (Block C) PC2", key = "FR1 n77 CE (Block C) PC2")],
-        [sg.Checkbox("FR1 n78 PC3", key = "FR1 n78 PC3")],
     ]
     
-    fr1_tech_5 = [
+    fr1_tech_3 = [
+        [sg.Checkbox("FR1 n77 (Block B) PC3", key = "FR1 n77 (Block B) PC3")],
+        [sg.Checkbox("FR1 n77 (Block C) PC3", key = "FR1 n77 (Block C) PC3")],
+        [sg.Checkbox("FR1 n78 PC3", key = "FR1 n78 PC3")],
         [sg.Checkbox("FR1 n78 (Block A) PC3", key = "FR1 n78 (Block A) PC3")],
         [sg.Checkbox("FR1 n78 (Block B) PC3", key = "FR1 n78 (Block B) PC3")],
         [sg.Checkbox("FR1 n78 (Block C) PC3", key = "FR1 n78 (Block C) PC3")],
         [sg.Checkbox("FR1 n78 IC PC3", key = "FR1 n78 IC PC3")],
-        [sg.Checkbox("FR1 n78 CE PC3", key = "FR1 n78 CE PC3")],
-        [sg.Checkbox("FR1 n78 PC2", key = "FR1 n78 PC2")],
-        [sg.Checkbox("FR1 n78 (Block A) PC2", key = "FR1 n78 (Block A) PC2")],
-        [sg.Checkbox("FR1 n78 (Block B) PC2", key = "FR1 n78 (Block B) PC2")],
-        [sg.Checkbox("FR1 n78 (Block C) PC2", key = "FR1 n78 (Block C) PC2")],
-        [sg.Checkbox("FR1 n78 IC PC2", key = "FR1 n78 IC PC2")],
-        [sg.Checkbox("FR1 n78 CE PC2", key = "FR1 n78 CE PC2")],
-        [sg.Checkbox("FR1 n79", key = "FR1 n79")],
-        [sg.Checkbox("FR1 n79 CE", key = "FR1 n79 CE")],
-        [sg.Checkbox("FR1 n79 (Narrow) PC3", key = "FR1 n79 (Narrow) PC3")],
-        [sg.Checkbox("FR1 n79 (Narrow) PC2", key = "FR1 n79 (Narrow) PC2")],
-    ]
-    
-    fr1_tech_6 = [
-        [sg.Checkbox("FR1 n85", key = "FR1 n85")],
-        [sg.Checkbox("FR1 n90", key = "FR1 n90")],
-        [sg.Checkbox("FR1 n90 CE", key = "FR1 n90 CE")],
-        [sg.Checkbox("FR1 n91", key = "FR1 n91")],
-        [sg.Checkbox("FR1 n92", key = "FR1 n92")],
-        [sg.Checkbox("FR1 n93", key = "FR1 n93")],
-        [sg.Checkbox("FR1 n94", key = "FR1 n94")],
-        [sg.Checkbox("FR1 n96", key = "FR1 n96")],
-        [sg.Checkbox("FR1 n96 CE", key = "FR1 n96 CE")],
-        [sg.Checkbox("FR1 n100", key = "FR1 n100")],
-        [sg.Checkbox("FR1 n101", key = "FR1 n101")],
-        [sg.Checkbox("FR1 n102", key = "FR1 n102")],
-        [sg.Checkbox("FR1 n102 CE", key = "FR1 n102 CE")],
-        [sg.Checkbox("FR1 n104", key = "FR1 n104")],
-        [sg.Checkbox("FR1 n104 CE", key = "FR1 n104 CE")],
+        [sg.Checkbox("FR1 n79 PC3", key = "FR1 n79 PC3")],
+        [sg.Checkbox("FR1 n79 (Narrow) PC3", key = "FR1 n79 (Narrow) PC3")]
     ]
     
     fr1_layout =[
+        # [
+        #     sg.Column(fr1_tech_1, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(fr1_tech_2, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(fr1_tech_3, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(fr1_tech_4, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(fr1_tech_5, element_justification = "left"),
+        #     sg.VerticalSeparator(),
+        #     sg.Column(fr1_tech_6, element_justification = "left"),
+        # ],
+        
         [
             sg.Column(fr1_tech_1, element_justification = "left"),
             sg.VerticalSeparator(),
@@ -943,11 +1024,6 @@ def fr1_tech_window(primary_window):
             sg.VerticalSeparator(),
             sg.Column(fr1_tech_3, element_justification = "left"),
             sg.VerticalSeparator(),
-            sg.Column(fr1_tech_4, element_justification = "left"),
-            sg.VerticalSeparator(),
-            sg.Column(fr1_tech_5, element_justification = "left"),
-            sg.VerticalSeparator(),
-            sg.Column(fr1_tech_6, element_justification = "left"),
         ],
         
         [
@@ -1205,7 +1281,7 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
                     stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                     
                     stuff_for_not_wlan.reported_tech_results()
-                    stuff_for_not_wlan.spatial_sum_sar()
+                    # stuff_for_not_wlan.spatial_sum_sar()
                 
                 if not wtl:
                     print("There is no Wi-Fi Data.")
@@ -1213,7 +1289,7 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
                     stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                     
                     stuff_for_wlan.reported_tech_results()
-                    stuff_for_wlan.spatial_sum_sar()
+                    # stuff_for_wlan.spatial_sum_sar()
                 
                 reported_excel(rwf)
                 
