@@ -50,10 +50,12 @@ class Sec_1:
                             "Wi-Fi 5.9 GHz", "Wi-Fi 6E", "U-NII 5", "U-NII 6", "U-NII 7", "U-NII 8"],
             "Bluetooth" :  ["Bluetooth (2.4 GHz)", "Bluetooth (NB U-NII 1)", "Bluetooth (NB U-NII 3)"],
             "Thread"    :  ["Thread (2.4 GHz)", "802.15.4ab"],
-            "MSS"       :  ["MSS"]
+            "MSS"       :  ["MSS"],
+            "NTN"       :  ["NTN S-Band", "NTN L-Band"]
             }
         self.fcc = {
             "TNE" :    ["LTE B53", "FR1 n53", "MSS"],
+            "TNB" :    ["NTN S-Band", "NTN L-Band"],
             "CBE" :    ["LTE B48", "FR1 n48"],
             "PCE" :    ["GSM 850", "GSM 1900", "W-CDMA B2", "W-CDMA B4", "W-CDMA B5", "LTE B2", "LTE B4",
                         "LTE B5", "LTE B7", "LTE B12", "LTE B13", "LTE B14", "LTE B17", "LTE B25", "LTE B26",
@@ -74,7 +76,7 @@ class Sec_1:
                         "LTE B30", "LTE B38", "LTE B41 PC3", "LTE B41 PC2", "LTE B53", "LTE B66",
                         "LTE B70", "LTE B71", "FR1 n2", "FR1 n5", "FR1 n7", "FR1 n12", "FR1 n13",
                         "FR1 n14", "FR1 n25", "FR1 n30", "FR1 n38", "FR1 n41 PC3", "FR1 n66",
-                        "FR1 n41 PC2", "FR1 n53", "FR1 n78 PC3", "FR1 n78 PC2", "MSS"],
+                        "FR1 n41 PC2", "FR1 n53", "FR1 n78 PC3", "FR1 n78 PC2", "MSS", "NTN S-Band", "NTN L-Band"],
             "DTS" :    ["Wi-Fi 2.4 GHz", "Thread (2.4 GHz)"],
             "NII" :    ["Wi-Fi 5.2 GHz", "Wi-Fi 5.3 GHz", "Wi-Fi 5.5 GHz", "Wi-Fi 5.8 GHz", "Wi-Fi 6E", "U-NII 5",
                         "U-NII 6", "U-NII 7", "U-NII 8", "Bluetooth (NB U-NII 1)", "Bluetooth (NB U-NII 3)"],
@@ -84,16 +86,18 @@ class Sec_1:
     
     def section_1_fcc(self):
         try:
-            cbe_fcc_data = [self.data[self.data["Technology OG"] == self.fcc["CBE"][tech]] for tech in range(len(self.fcc["CBE"]))]
-            pce_fcc_data = [self.data[self.data["Technology OG"] == self.fcc["PCE"][tech]] for tech in range(len(self.fcc["PCE"]))]
-            tne_fcc_data = [self.data[self.data["Technology OG"] == self.fcc["TNE"][tech]] for tech in range(len(self.fcc["TNE"]))]
-            dts_fcc_data = [self.data[self.data["Technology OG"] == self.fcc["DTS"][tech]] for tech in range(len(self.fcc["DTS"]))]
-            nii_fcc_data = [self.data[self.data["Technology OG"] == self.fcc["NII"][tech]] for tech in range(len(self.fcc["NII"]))]
-            dss_fcc_data = [self.data[self.data["Technology OG"] == self.fcc["DSS"][tech]] for tech in range(len(self.fcc["DSS"]))]
+            cbe_fcc_data = [self.data[self.data["Tech"] == self.fcc["CBE"][tech]] for tech in range(len(self.fcc["CBE"]))]
+            pce_fcc_data = [self.data[self.data["Tech"] == self.fcc["PCE"][tech]] for tech in range(len(self.fcc["PCE"]))]
+            tne_fcc_data = [self.data[self.data["Tech"] == self.fcc["TNE"][tech]] for tech in range(len(self.fcc["TNE"]))]
+            tbe_fcc_data = [self.data[self.data["Tech"] == self.fcc["TBE"][tech]] for tech in range(len(self.fcc["TBE"]))]
+            dts_fcc_data = [self.data[self.data["Tech"] == self.fcc["DTS"][tech]] for tech in range(len(self.fcc["DTS"]))]
+            nii_fcc_data = [self.data[self.data["Tech"] == self.fcc["NII"][tech]] for tech in range(len(self.fcc["NII"]))]
+            dss_fcc_data = [self.data[self.data["Tech"] == self.fcc["DSS"][tech]] for tech in range(len(self.fcc["DSS"]))]
             
             cbe_fcc_separated_data = [cbe_fcc_data[no_nan][cbe_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(cbe_fcc_data))]
             pce_fcc_separated_data = [pce_fcc_data[no_nan][pce_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(pce_fcc_data))]
             tne_fcc_separated_data = [tne_fcc_data[no_nan][tne_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(tne_fcc_data))]
+            tbe_fcc_separated_data = [tbe_fcc_data[no_nan][tbe_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(tbe_fcc_data))]
             dts_fcc_separated_data = [dts_fcc_data[no_nan][dts_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(dts_fcc_data))]
             nii_fcc_separated_data = [nii_fcc_data[no_nan][nii_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(nii_fcc_data))]
             dss_fcc_separated_data = [dss_fcc_data[no_nan][dss_fcc_data[no_nan]["1-g Meas. (W/kg)"] != 0] for no_nan in range(len(dss_fcc_data))]
@@ -101,6 +105,7 @@ class Sec_1:
             cbe_fcc_head_data = [cbe_fcc_separated_data[head_data][cbe_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(cbe_fcc_separated_data))]
             pce_fcc_head_data = [pce_fcc_separated_data[head_data][pce_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(pce_fcc_separated_data))]
             tne_fcc_head_data = [tne_fcc_separated_data[head_data][tne_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(tne_fcc_separated_data))]
+            tbe_fcc_head_data = [tbe_fcc_separated_data[head_data][tbe_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(tbe_fcc_separated_data))]
             dts_fcc_head_data = [dts_fcc_separated_data[head_data][dts_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(dts_fcc_separated_data))]
             nii_fcc_head_data = [nii_fcc_separated_data[head_data][nii_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(nii_fcc_separated_data))]
             dss_fcc_head_data = [dss_fcc_separated_data[head_data][dss_fcc_separated_data[head_data]["RF Exposure Condition"] == "Head"] for head_data in range(len(dss_fcc_separated_data))]
@@ -108,6 +113,7 @@ class Sec_1:
             cbe_fcc_body_data = [cbe_fcc_separated_data[body_data][cbe_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(cbe_fcc_separated_data))]
             pce_fcc_body_data = [pce_fcc_separated_data[body_data][pce_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(pce_fcc_separated_data))]
             tne_fcc_body_data = [tne_fcc_separated_data[body_data][tne_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(tne_fcc_separated_data))]
+            tbe_fcc_body_data = [tbe_fcc_separated_data[body_data][tbe_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(tbe_fcc_separated_data))]
             dts_fcc_body_data = [dts_fcc_separated_data[body_data][dts_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(dts_fcc_separated_data))]
             nii_fcc_body_data = [nii_fcc_separated_data[body_data][nii_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(nii_fcc_separated_data))]
             dss_fcc_body_data = [dss_fcc_separated_data[body_data][dss_fcc_separated_data[body_data]["RF Exposure Condition"] == "Body-worn"] for body_data in range(len(dss_fcc_separated_data))]
@@ -115,6 +121,7 @@ class Sec_1:
             cbe_fcc_body_hotspot_data = [cbe_fcc_separated_data[body_hotspot_data][cbe_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(cbe_fcc_separated_data))]
             pce_fcc_body_hotspot_data = [pce_fcc_separated_data[body_hotspot_data][pce_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(pce_fcc_separated_data))]
             tne_fcc_body_hotspot_data = [tne_fcc_separated_data[body_hotspot_data][tne_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(tne_fcc_separated_data))]
+            tbe_fcc_body_hotspot_data = [tbe_fcc_separated_data[body_hotspot_data][tbe_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(tbe_fcc_separated_data))]
             dts_fcc_body_hotspot_data = [dts_fcc_separated_data[body_hotspot_data][dts_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(dts_fcc_separated_data))]
             nii_fcc_body_hotspot_data = [nii_fcc_separated_data[body_hotspot_data][nii_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(nii_fcc_separated_data))]
             dss_fcc_body_hotspot_data = [dss_fcc_separated_data[body_hotspot_data][dss_fcc_separated_data[body_hotspot_data]["RF Exposure Condition"] == "Body & Hotspot"] for body_hotspot_data in range(len(dss_fcc_separated_data))]
@@ -122,6 +129,7 @@ class Sec_1:
             cbe_fcc_hotspot_data = [cbe_fcc_separated_data[hotspot_data][cbe_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(cbe_fcc_separated_data))]
             pce_fcc_hotspot_data = [pce_fcc_separated_data[hotspot_data][pce_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(pce_fcc_separated_data))]
             tne_fcc_hotspot_data = [tne_fcc_separated_data[hotspot_data][tne_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(tne_fcc_separated_data))]
+            tbe_fcc_hotspot_data = [tbe_fcc_separated_data[hotspot_data][tbe_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(tbe_fcc_separated_data))]
             dts_fcc_hotspot_data = [dts_fcc_separated_data[hotspot_data][dts_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(dts_fcc_separated_data))]
             nii_fcc_hotspot_data = [nii_fcc_separated_data[hotspot_data][nii_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(nii_fcc_separated_data))]
             dss_fcc_hotspot_data = [dss_fcc_separated_data[hotspot_data][dss_fcc_separated_data[hotspot_data]["RF Exposure Condition"] == "Hotspot"] for hotspot_data in range(len(dss_fcc_separated_data))]
@@ -129,6 +137,7 @@ class Sec_1:
             cbe_fcc_extremity_data = [cbe_fcc_separated_data[extremity_data][cbe_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(cbe_fcc_separated_data))]
             pce_fcc_extremity_data = [pce_fcc_separated_data[extremity_data][pce_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(pce_fcc_separated_data))]
             tne_fcc_extremity_data = [tne_fcc_separated_data[extremity_data][tne_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(tne_fcc_separated_data))]
+            tbe_fcc_extremity_data = [tbe_fcc_separated_data[extremity_data][tbe_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(tbe_fcc_separated_data))]
             dts_fcc_extremity_data = [dts_fcc_separated_data[extremity_data][dts_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(dts_fcc_separated_data))]
             nii_fcc_extremity_data = [nii_fcc_separated_data[extremity_data][nii_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(nii_fcc_separated_data))]
             dss_fcc_extremity_data = [dss_fcc_separated_data[extremity_data][dss_fcc_separated_data[extremity_data]["RF Exposure Condition"] == "Extremity"] for extremity_data in range(len(dss_fcc_separated_data))]
@@ -136,6 +145,7 @@ class Sec_1:
             cbe_fcc_head_max = [cbe_fcc_head_data[cbe_fcc_head_data_max][cbe_fcc_head_data[cbe_fcc_head_data_max]["1-g Scaled (W/kg)"] == cbe_fcc_head_data[cbe_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for cbe_fcc_head_data_max in range(len(cbe_fcc_head_data))]
             pce_fcc_head_max = [pce_fcc_head_data[pce_fcc_head_data_max][pce_fcc_head_data[pce_fcc_head_data_max]["1-g Scaled (W/kg)"] == pce_fcc_head_data[pce_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for pce_fcc_head_data_max in range(len(pce_fcc_head_data))]
             tne_fcc_head_max = [tne_fcc_head_data[tne_fcc_head_data_max][tne_fcc_head_data[tne_fcc_head_data_max]["1-g Scaled (W/kg)"] == tne_fcc_head_data[tne_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for tne_fcc_head_data_max in range(len(tne_fcc_head_data))]
+            tbe_fcc_head_max = [tbe_fcc_head_data[tbe_fcc_head_data_max][tbe_fcc_head_data[tbe_fcc_head_data_max]["1-g Scaled (W/kg)"] == tbe_fcc_head_data[tbe_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for tbe_fcc_head_data_max in range(len(tbe_fcc_head_data))]
             dts_fcc_head_max = [dts_fcc_head_data[dts_fcc_head_data_max][dts_fcc_head_data[dts_fcc_head_data_max]["1-g Scaled (W/kg)"] == dts_fcc_head_data[dts_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for dts_fcc_head_data_max in range(len(dts_fcc_head_data))]
             nii_fcc_head_max = [nii_fcc_head_data[nii_fcc_head_data_max][nii_fcc_head_data[nii_fcc_head_data_max]["1-g Scaled (W/kg)"] == nii_fcc_head_data[nii_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for nii_fcc_head_data_max in range(len(nii_fcc_head_data))]
             dss_fcc_head_max = [dss_fcc_head_data[dss_fcc_head_data_max][dss_fcc_head_data[dss_fcc_head_data_max]["1-g Scaled (W/kg)"] == dss_fcc_head_data[dss_fcc_head_data_max]["1-g Scaled (W/kg)"].max()] for dss_fcc_head_data_max in range(len(dss_fcc_head_data))]
@@ -143,6 +153,7 @@ class Sec_1:
             cbe_fcc_body_max = [cbe_fcc_body_data[cbe_fcc_body_data_max][cbe_fcc_body_data[cbe_fcc_body_data_max]["1-g Scaled (W/kg)"] == cbe_fcc_body_data[cbe_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for cbe_fcc_body_data_max in range(len(cbe_fcc_body_data))]
             pce_fcc_body_max = [pce_fcc_body_data[pce_fcc_body_data_max][pce_fcc_body_data[pce_fcc_body_data_max]["1-g Scaled (W/kg)"] == pce_fcc_body_data[pce_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for pce_fcc_body_data_max in range(len(pce_fcc_body_data))]
             tne_fcc_body_max = [tne_fcc_body_data[tne_fcc_body_data_max][tne_fcc_body_data[tne_fcc_body_data_max]["1-g Scaled (W/kg)"] == tne_fcc_body_data[tne_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for tne_fcc_body_data_max in range(len(tne_fcc_body_data))]
+            tbe_fcc_body_max = [tbe_fcc_body_data[tbe_fcc_body_data_max][tbe_fcc_body_data[tbe_fcc_body_data_max]["1-g Scaled (W/kg)"] == tbe_fcc_body_data[tbe_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for tbe_fcc_body_data_max in range(len(tbe_fcc_body_data))]
             dts_fcc_body_max = [dts_fcc_body_data[dts_fcc_body_data_max][dts_fcc_body_data[dts_fcc_body_data_max]["1-g Scaled (W/kg)"] == dts_fcc_body_data[dts_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for dts_fcc_body_data_max in range(len(dts_fcc_body_data))]
             nii_fcc_body_max = [nii_fcc_body_data[nii_fcc_body_data_max][nii_fcc_body_data[nii_fcc_body_data_max]["1-g Scaled (W/kg)"] == nii_fcc_body_data[nii_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for nii_fcc_body_data_max in range(len(nii_fcc_body_data))]
             dss_fcc_body_max = [dss_fcc_body_data[dss_fcc_body_data_max][dss_fcc_body_data[dss_fcc_body_data_max]["1-g Scaled (W/kg)"] == dss_fcc_body_data[dss_fcc_body_data_max]["1-g Scaled (W/kg)"].max()] for dss_fcc_body_data_max in range(len(dss_fcc_body_data))]
@@ -150,6 +161,7 @@ class Sec_1:
             cbe_fcc_body_hotspot_max = [cbe_fcc_body_hotspot_data[cbe_fcc_body_hotspot_data_max][cbe_fcc_body_hotspot_data[cbe_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == cbe_fcc_body_hotspot_data[cbe_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for cbe_fcc_body_hotspot_data_max in range(len(cbe_fcc_body_hotspot_data))]
             pce_fcc_body_hotspot_max = [pce_fcc_body_hotspot_data[pce_fcc_body_hotspot_data_max][pce_fcc_body_hotspot_data[pce_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == pce_fcc_body_hotspot_data[pce_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for pce_fcc_body_hotspot_data_max in range(len(pce_fcc_body_hotspot_data))]
             tne_fcc_body_hotspot_max = [tne_fcc_body_hotspot_data[tne_fcc_body_hotspot_data_max][tne_fcc_body_hotspot_data[tne_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == tne_fcc_body_hotspot_data[tne_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for tne_fcc_body_hotspot_data_max in range(len(tne_fcc_body_hotspot_data))]
+            tbe_fcc_body_hotspot_max = [tbe_fcc_body_hotspot_data[tbe_fcc_body_hotspot_data_max][tbe_fcc_body_hotspot_data[tbe_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == tbe_fcc_body_hotspot_data[tbe_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for tbe_fcc_body_hotspot_data_max in range(len(tbe_fcc_body_hotspot_data))]
             dts_fcc_body_hotspot_max = [dts_fcc_body_hotspot_data[dts_fcc_body_hotspot_data_max][dts_fcc_body_hotspot_data[dts_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == dts_fcc_body_hotspot_data[dts_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for dts_fcc_body_hotspot_data_max in range(len(dts_fcc_body_hotspot_data))]
             nii_fcc_body_hotspot_max = [nii_fcc_body_hotspot_data[nii_fcc_body_hotspot_data_max][nii_fcc_body_hotspot_data[nii_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == nii_fcc_body_hotspot_data[nii_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for nii_fcc_body_hotspot_data_max in range(len(nii_fcc_body_hotspot_data))]
             dss_fcc_body_hotspot_max = [dss_fcc_body_hotspot_data[dss_fcc_body_hotspot_data_max][dss_fcc_body_hotspot_data[dss_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"] == dss_fcc_body_hotspot_data[dss_fcc_body_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for dss_fcc_body_hotspot_data_max in range(len(dss_fcc_body_hotspot_data))]
@@ -157,6 +169,7 @@ class Sec_1:
             cbe_fcc_hotspot_max = [cbe_fcc_hotspot_data[cbe_fcc_hotspot_data_max][cbe_fcc_hotspot_data[cbe_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == cbe_fcc_hotspot_data[cbe_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for cbe_fcc_hotspot_data_max in range(len(cbe_fcc_hotspot_data))]
             pce_fcc_hotspot_max = [pce_fcc_hotspot_data[pce_fcc_hotspot_data_max][pce_fcc_hotspot_data[pce_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == pce_fcc_hotspot_data[pce_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for pce_fcc_hotspot_data_max in range(len(pce_fcc_hotspot_data))]
             tne_fcc_hotspot_max = [tne_fcc_hotspot_data[tne_fcc_hotspot_data_max][tne_fcc_hotspot_data[tne_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == tne_fcc_hotspot_data[tne_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for tne_fcc_hotspot_data_max in range(len(tne_fcc_hotspot_data))]
+            tbe_fcc_hotspot_max = [tbe_fcc_hotspot_data[tbe_fcc_hotspot_data_max][tbe_fcc_hotspot_data[tbe_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == tbe_fcc_hotspot_data[tbe_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for tbe_fcc_hotspot_data_max in range(len(tbe_fcc_hotspot_data))]
             dts_fcc_hotspot_max = [dts_fcc_hotspot_data[dts_fcc_hotspot_data_max][dts_fcc_hotspot_data[dts_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == dts_fcc_hotspot_data[dts_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for dts_fcc_hotspot_data_max in range(len(dts_fcc_hotspot_data))]
             nii_fcc_hotspot_max = [nii_fcc_hotspot_data[nii_fcc_hotspot_data_max][nii_fcc_hotspot_data[nii_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == nii_fcc_hotspot_data[nii_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for nii_fcc_hotspot_data_max in range(len(nii_fcc_hotspot_data))]
             dss_fcc_hotspot_max = [dss_fcc_hotspot_data[dss_fcc_hotspot_data_max][dss_fcc_hotspot_data[dss_fcc_hotspot_data_max]["1-g Scaled (W/kg)"] == dss_fcc_hotspot_data[dss_fcc_hotspot_data_max]["1-g Scaled (W/kg)"].max()] for dss_fcc_hotspot_data_max in range(len(dss_fcc_hotspot_data))]
@@ -164,6 +177,7 @@ class Sec_1:
             cbe_fcc_extremity_max = [cbe_fcc_extremity_data[cbe_fcc_extremity_data_max][cbe_fcc_extremity_data[cbe_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == cbe_fcc_extremity_data[cbe_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for cbe_fcc_extremity_data_max in range(len(cbe_fcc_extremity_data))]
             pce_fcc_extremity_max = [pce_fcc_extremity_data[pce_fcc_extremity_data_max][pce_fcc_extremity_data[pce_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == pce_fcc_extremity_data[pce_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for pce_fcc_extremity_data_max in range(len(pce_fcc_extremity_data))]
             tne_fcc_extremity_max = [tne_fcc_extremity_data[tne_fcc_extremity_data_max][tne_fcc_extremity_data[tne_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == tne_fcc_extremity_data[tne_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for tne_fcc_extremity_data_max in range(len(tne_fcc_extremity_data))]
+            tbe_fcc_extremity_max = [tbe_fcc_extremity_data[tbe_fcc_extremity_data_max][tbe_fcc_extremity_data[tbe_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == tbe_fcc_extremity_data[tbe_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for tbe_fcc_extremity_data_max in range(len(tbe_fcc_extremity_data))]
             dts_fcc_extremity_max = [dts_fcc_extremity_data[dts_fcc_extremity_data_max][dts_fcc_extremity_data[dts_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == dts_fcc_extremity_data[dts_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for dts_fcc_extremity_data_max in range(len(dts_fcc_extremity_data))]
             nii_fcc_extremity_max = [nii_fcc_extremity_data[nii_fcc_extremity_data_max][nii_fcc_extremity_data[nii_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == nii_fcc_extremity_data[nii_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for nii_fcc_extremity_data_max in range(len(nii_fcc_extremity_data))]
             dss_fcc_extremity_max = [dss_fcc_extremity_data[dss_fcc_extremity_data_max][dss_fcc_extremity_data[dss_fcc_extremity_data_max]["10-g Scaled (W/kg)"] == dss_fcc_extremity_data[dss_fcc_extremity_data_max]["10-g Scaled (W/kg)"].max()] for dss_fcc_extremity_data_max in range(len(dss_fcc_extremity_data))]
@@ -171,6 +185,7 @@ class Sec_1:
             cbe_fcc_sec_1 = [pd.concat(cbe_fcc_head_max), pd.concat(cbe_fcc_body_max), pd.concat(cbe_fcc_body_hotspot_max), pd.concat(cbe_fcc_hotspot_max), pd.concat(cbe_fcc_extremity_max)]
             pce_fcc_sec_1 = [pd.concat(pce_fcc_head_max), pd.concat(pce_fcc_body_max), pd.concat(pce_fcc_body_hotspot_max), pd.concat(pce_fcc_hotspot_max), pd.concat(pce_fcc_extremity_max)]
             tne_fcc_sec_1 = [pd.concat(tne_fcc_head_max), pd.concat(tne_fcc_body_max), pd.concat(tne_fcc_body_hotspot_max), pd.concat(tne_fcc_hotspot_max), pd.concat(tne_fcc_extremity_max)]
+            tbe_fcc_sec_1 = [pd.concat(tbe_fcc_head_max), pd.concat(tbe_fcc_body_max), pd.concat(tbe_fcc_body_hotspot_max), pd.concat(tbe_fcc_hotspot_max), pd.concat(tbe_fcc_extremity_max)]
             dts_fcc_sec_1 = [pd.concat(dts_fcc_head_max), pd.concat(dts_fcc_body_max), pd.concat(dts_fcc_body_hotspot_max), pd.concat(dts_fcc_hotspot_max), pd.concat(dts_fcc_extremity_max)]
             nii_fcc_sec_1 = [pd.concat(nii_fcc_head_max), pd.concat(nii_fcc_body_max), pd.concat(nii_fcc_body_hotspot_max), pd.concat(nii_fcc_hotspot_max), pd.concat(nii_fcc_extremity_max)]
             dss_fcc_sec_1 = [pd.concat(dss_fcc_head_max), pd.concat(dss_fcc_body_max), pd.concat(dss_fcc_body_hotspot_max), pd.concat(dss_fcc_hotspot_max), pd.concat(dss_fcc_extremity_max)]
@@ -252,6 +267,32 @@ class Sec_1:
             else:
                 tne_extr_max = tne_fcc_sec_1[4]["10-g Scaled (W/kg)"].max()
                 tne_extr = float(tne_extr_max)
+            
+            if tbe_fcc_sec_1[0].size == 0:
+                tbe_head = "N/A"
+            else:
+                tbe_head_max = tbe_fcc_sec_1[0]["1-g Scaled (W/kg)"].max()
+                tnb_head = float(tbe_head_max)
+            if tbe_fcc_sec_1[1].size == 0:
+                tbe_body = "N/A"
+            else:
+                tbe_body_max = tbe_fcc_sec_1[1]["1-g Scaled (W/kg)"].max()
+                tbe_body = float(tbe_body_max)
+            if tbe_fcc_sec_1[2].size == 0:
+                tbe_body_hoty = "N/A"
+            else:
+                tbe_body_hoty_max = tbe_fcc_sec_1[2]["1-g Scaled (W/kg)"].max()
+                tbe_body_hoty = float(tbe_body_hoty_max)
+            if tbe_fcc_sec_1[3].size == 0:
+                tbe_hoty = "N/A"
+            else:
+                tbe_hoty_max = tbe_fcc_sec_1[3]["1-g Scaled (W/kg)"].max()
+                tbe_hoty = float(tbe_hoty_max)
+            if tbe_fcc_sec_1[4].size == 0:
+                tbe_extr = "N/A"
+            else:
+                tbe_extr_max = tbe_fcc_sec_1[4]["10-g Scaled (W/kg)"].max()
+                tbe_extr = float(tbe_extr_max)
             
             if dts_fcc_sec_1[0].size == 0:
                 dts_head = "N/A"
@@ -345,6 +386,13 @@ class Sec_1:
                     tne_body_hoty,
                     tne_hoty,
                     tne_extr
+                    ],
+                "TBE": [
+                    tbe_head,
+                    tbe_body,
+                    tbe_body_hoty,
+                    tbe_hoty,
+                    tbe_extr
                     ],
                 "PCE": [
                     pce_head,
