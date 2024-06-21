@@ -1298,12 +1298,12 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
                 reported_results.close()
                 
             if rr_event == "AJ":
-                not_wlan = ["GSM 850", "GSM 1900", "W-CDMA B2", "W-CDMA B4", "W-CDMA B5", "LTE B2", "LTE B4", "LTE B5", "LTE B7", "LTE B12", "LTE B13", "LTE B14", "LTE B25", "LTE B26", "LTE B30", "LTE B41 PC3", "LTE B48", "LTE B53", "LTE B66", "LTE B71", "FR1 n5", "FR1 n7", "FR1 n12", "FR1 n14", "FR1 n25", "FR1 n26", "FR1 n30", "FR1 n41 PC3", "FR1 n48", "FR1 n53", "FR1 n66", "FR1 n70", "FR1 n71", "FR1 n77 (Block A) PC3", "FR1 n77 (Block C) PC3", "FR1 n78 IC PC3", "FR1 n79 (Narrow) PC3", "Bluetooth (2.4 GHz)", "Bluetooth (NB U-NII 1)", "Bluetooth (NB U-NII 3)", "802.15.4", "802.15.4ab", "MSS (L-Band)"]
+                not_wlan = ["GSM 850", "GSM 1900", "W-CDMA B2", "W-CDMA B4", "W-CDMA B5", "LTE B2", "LTE B4", "LTE B5", "LTE B7", "LTE B12", "LTE B13", "LTE B14", "LTE B25", "LTE B26", "LTE B30", "LTE B41 PC3", "LTE B48", "LTE B53", "LTE B66", "LTE B71", "FR1 n5", "FR1 n7", "FR1 n12", "FR1 n14", "FR1 n25", "FR1 n26", "FR1 n30", "FR1 n41 PC3", "FR1 n48", "FR1 n53", "FR1 n66", "FR1 n70", "FR1 n71", "FR1 n77 (Block A) PC3", "FR1 n77 (Block B) PC3", "FR1 n77 (Block C) PC3", "FR1 n78 IC PC3", "FR1 n79 (Narrow) PC3", "Bluetooth (2.4 GHz)", "Bluetooth (NB U-NII 1)", "Bluetooth (NB U-NII 3)", "802.15.4", "802.15.4ab", "MSS (L-Band)"]
                 
                 wlan = ["Wi-Fi 2.4 GHz", "Wi-Fi 5.2 GHz", "Wi-Fi 5.3 GHz", "Wi-Fi 5.5 GHz", "Wi-Fi 5.8 GHz", "U-NII 5", "U-NII 6", "U-NII 7", "U-NII 8"]
                 
-                stuff_for_not_wlan = Not_WiFi(data = data, tech_list = not_wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
-                stuff_for_wlan = Wlan(data = data, tech_list = wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
+                stuff_for_not_wlan = Not_WiFi(data = data, tech_list = not_wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
+                stuff_for_wlan = Wlan(data = data, tech_list = wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                 
                 stuff_for_not_wlan.reported_tech_results()
                 stuff_for_wlan.reported_tech_results()
@@ -1432,7 +1432,7 @@ def summary_results(primary_window, sr_out, nwtl, wtl, data, rwf, swf, stxwf, cw
                 summary_table.close()
                 
             if sr_event == "AJ":
-                not_wlan = ["GSM 850", "GSM 1900", "W-CDMA B2", "W-CDMA B4", "W-CDMA B5", "LTE B2", "LTE B4", "LTE B5", "LTE B7", "LTE B12", "LTE B13", "LTE B14", "LTE B25", "LTE B26", "LTE B30", "LTE B41 FCC PC3", "LTE B41 IC PC3", "LTE B48", "LTE B53", "LTE B66", "LTE B71", "FR1 n5", "FR1 n7", "FR1 n12", "FR1 n14", "FR1 n25", "FR1 n26", "FR1 n30", "FR1 n41 PC3", "FR1 n48", "FR1 n53", "FR1 n66", "FR1 n70", "FR1 n71", "FR1 n77 (Block A) PC3", "FR1 n77 (Block C) PC3", "FR1 n78 IC PC3", "FR1 n79 (Narrow) PC3", "Bluetooth (2.4 GHz)", "Bluetooth (NB U-NII 1)", "Bluetooth (NB U-NII 3)", "802.15.4", "802.15.4ab", "MSS (L-Band)"]
+                not_wlan = ["GSM 850", "GSM 1900", "W-CDMA B2", "W-CDMA B4", "W-CDMA B5", "LTE B2", "LTE B4", "LTE B5", "LTE B7", "LTE B12", "LTE B13", "LTE B14", "LTE B25", "LTE B26", "LTE B30", "LTE B41 PC3", "LTE B48", "LTE B53", "LTE B66", "LTE B71", "FR1 n5", "FR1 n7", "FR1 n12", "FR1 n14", "FR1 n25", "FR1 n26", "FR1 n30", "FR1 n41 PC3", "FR1 n48", "FR1 n53", "FR1 n66", "FR1 n70", "FR1 n71", "FR1 n77 (Block A) PC3", "FR1 n77 (Block B) PC3", "FR1 n77 (Block C) PC3", "FR1 n78 IC PC3", "FR1 n79 (Narrow) PC3", "Bluetooth (2.4 GHz)", "Bluetooth (NB U-NII 1)", "Bluetooth (NB U-NII 3)", "802.15.4", "802.15.4ab", "MSS (L-Band)"]
                 
                 wlan = ["Wi-Fi 2.4 GHz", "Wi-Fi 5.2 GHz", "Wi-Fi 5.3 GHz", "Wi-Fi 5.5 GHz", "Wi-Fi 5.8 GHz", "U-NII 5", "U-NII 6", "U-NII 7", "U-NII 8"]
                 
@@ -2073,7 +2073,7 @@ def main_window():
                 
                 data = [pd.read_excel(wbs[index], sheet_name = "Data") for index, name in enumerate(wbs)]
                 
-                expose_list = ["Head", "Body-worn", "Body & Hotspot", "Hotspot", "Extremity"]
+                expose_list = ["Head", "Body-worn", "Body & Hotspot", "Body & Extremity", "Hotspot", "Extremity"]
                 
                 # print(wbs)
             
