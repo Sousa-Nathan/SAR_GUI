@@ -4,10 +4,10 @@ GUI to compile raw data ready for reports, generate a summary workbook, and prod
 Prerequisite:
 
     1. Python 3.10.4
-    2. Pandas
-    3. OpenPyxl
-    4. NumPy
-    5. PySimpleGUI
+    2. Pandas == 2.1.3
+    3. OpenPyxl == 3.1.2
+    4. NumPy == 1.26.2
+    5. PySimpleGUI == 6.2.0
 
 Procedure:
 
