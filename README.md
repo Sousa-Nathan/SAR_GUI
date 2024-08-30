@@ -12,6 +12,7 @@ Prerequisite:
 Procedure:
 
     1. Download and install the required libraries/packages mentioned within Prerequisite.
+    1a. pip install python-package==version; e.g., pip install pandas==2.1.3
     2. Download the Modules folder.
     3. Download the SAR_GUI.
     4. Open a terminal window and change directories to where Modules and the GUI are saved.
