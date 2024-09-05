@@ -144,7 +144,7 @@ def reported_excel(filepath):
         header_row = active_sheet[1]
         
         active_sheet.column_dimensions["A"].width = 13.15
-        active_sheet.column_dimensions["B"].width = 12.72
+        active_sheet.column_dimensions["B"].width = 16.86
         active_sheet.column_dimensions["C"].width = 17.47
         active_sheet.column_dimensions["D"].width = 12.86
         active_sheet.column_dimensions["E"].width = 5.72
@@ -165,7 +165,7 @@ def reported_excel(filepath):
         active_sheet.column_dimensions["T"].width = 10.72
         active_sheet.column_dimensions["U"].width = 10.72
         active_sheet.column_dimensions["V"].width = 10.72
-        active_sheet.column_dimensions["W"].width = 15.58
+        active_sheet.column_dimensions["W"].width = 19.58
         active_sheet.column_dimensions["X"].width = 10.72
         active_sheet.column_dimensions["Y"].width = 4.72
         
@@ -205,7 +205,7 @@ def reported_excel(filepath):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "Devin Chang", "Greg Landowski", "John Moestopo", "Kanaad Sovani", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Prem Dhar", "Remi Rodberg", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -304,7 +304,7 @@ def summary_excel(filepath):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "Devin Chang", "Greg Landowski", "John Moestopo", "Kanaad Sovani", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Prem Dhar", "Remi Rodberg", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -402,7 +402,7 @@ def summary_compare_excel(filepath, scwb1, scwb2):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "Devin Chang", "Greg Landowski", "John Moestopo", "Kanaad Sovani", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Prem Dhar", "Remi Rodberg", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -452,13 +452,15 @@ def sec1_excel(filepath):
             active_sheet.column_dimensions["E"].width = 12.29
             active_sheet.column_dimensions["F"].width = 12.29
             active_sheet.column_dimensions["G"].width = 12.29
+            active_sheet.column_dimensions["H"].width = 12.29
+            active_sheet.column_dimensions["I"].width = 12.29
             
             for row in active_sheet[f"{dimensions}"]:
                 for cell in row:
                     cell.style = formatted_cells
                     cell.style = formatted_cells
             
-            for row in active_sheet["B2:G6"]:
+            for row in active_sheet["B2:I7"]:
                 for cell in row:
                     cell.number_format = "0.000"
             
@@ -472,38 +474,38 @@ def sec1_excel(filepath):
             active_sheet.column_dimensions["D"].width = 16.01
             active_sheet.column_dimensions["E"].width = 13.29
             active_sheet.column_dimensions["F"].width = 11.01
-            active_sheet.column_dimensions["G"].width = 5.29
-            active_sheet.column_dimensions["H"].width = 9.15
+            active_sheet.column_dimensions["G"].width = 11.01
+            active_sheet.column_dimensions["H"].width = 8.72
             active_sheet.column_dimensions["I"].width = 8.72
             active_sheet.column_dimensions["J"].width = 8.72
             active_sheet.column_dimensions["K"].width = 8.72
             active_sheet.column_dimensions["L"].width = 8.72
-            active_sheet.column_dimensions["M"].width = 8.86
+            active_sheet.column_dimensions["M"].width = 8.72
             active_sheet.column_dimensions["N"].width = 8.72
-            active_sheet.column_dimensions["O"].width = 8.72
-            active_sheet.column_dimensions["P"].width = 9.72
-            active_sheet.column_dimensions["Q"].width = 9.72
-            active_sheet.column_dimensions["R"].width = 9.72
-            active_sheet.column_dimensions["S"].width = 9.72
-            active_sheet.column_dimensions["T"].width = 9.72
-            active_sheet.column_dimensions["U"].width = 9.72
-            active_sheet.column_dimensions["V"].width = 9.72
-            active_sheet.column_dimensions["W"].width = 9.72
+            active_sheet.column_dimensions["O"].width = 10.72
+            active_sheet.column_dimensions["P"].width = 10.72
+            active_sheet.column_dimensions["Q"].width = 10.72
+            active_sheet.column_dimensions["R"].width = 10.72
+            active_sheet.column_dimensions["S"].width = 10.72
+            active_sheet.column_dimensions["T"].width = 10.72
+            active_sheet.column_dimensions["U"].width = 10.72
+            active_sheet.column_dimensions["V"].width = 10.72
+            active_sheet.column_dimensions["W"].width = 10.72
             
             for row in active_sheet[f"{dimensions}"]:
                 for cell in row:
                     cell.style = formatted_cells
                     cell.style = formatted_cells
             
-            for row in active_sheet["M2:M1000"]:
+            for row in active_sheet["L2:L1000"]:
                 for cell in row:
                     cell.number_format = "0.00%"
             
-            for row in active_sheet["N2:O1000"]:
+            for row in active_sheet["M2:N1000"]:
                 for cell in row:
                     cell.number_format = "0.00"
             
-            for row in active_sheet["P2:T1000"]:
+            for row in active_sheet["O2:V1000"]:
                 for cell in row:
                     cell.number_format = "0.000"
             
@@ -512,7 +514,7 @@ def sec1_excel(filepath):
     
     new_sheet = workbook.create_sheet("Author")
     
-    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "David Cervantes", "David Weaver", "Devin Chang", "John Moestopo", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Nina Villar", "Prem Dhar", "Remi Rodberg", "Richard Jankovics", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier", "Zoe Moestopo"]
+    author_list = ["Abhiyan Sapkota", "AJ Newcomer", "Alexa Sanchez Ochoa", "Anmol Ahmad", "Brandon Sousa", "Chris Kuwatani", "Coltyce Sanders", "Devin Chang", "Greg Landowski", "John Moestopo", "Kanaad Sovani", "Kiara Davis", "Luis Rivera", "Miguel Cervantes Silva", "Miguel Llamas", "Monika Sipa-Skorka", "Prem Dhar", "Remi Rodberg", "Tony Soares", "Truc Tran", "Walker Stewart", "Zachary A. Coustier"]
     
     new_sheet["A1"] = f"Brought to you by: {author_list[random.randrange(0, len(author_list))]}"
     new_sheet["A1"].font = Font(name = "Arial", sz = 72)
@@ -637,7 +639,7 @@ def gsm_tech_window(primary_window):
     while True:
         gsm_event, gsm_values = gsm_window.read()
         # print(gsm_event, gsm_values)
-        if gsm_event in (sg.WIN_CLOSED, "Exit"):
+        if gsm_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if gsm_event == "Submit":
@@ -680,7 +682,7 @@ def wcdma_tech_window(primary_window):
     while True:
         wcdma_event, wcdma_values = wcdma_window.read()
         # print(wcdma_event, wcdma_values)
-        if wcdma_event in (sg.WIN_CLOSED, "Exit"):
+        if wcdma_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if wcdma_event == "Submit":
@@ -825,7 +827,6 @@ def lte_tech_window(primary_window):
             sg.Column(lte_tech_1, element_justification = "left"),
             sg.VerticalSeparator(),
             sg.Column(lte_tech_2, element_justification = "left"),
-            sg.VerticalSeparator(),
         ],
         
         [
@@ -840,7 +841,7 @@ def lte_tech_window(primary_window):
     while True:
         lte_event, lte_values = lte_window.read()
         # print(lte_event, lte_values)
-        if lte_event in (sg.WIN_CLOSED, "Exit"):
+        if lte_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if lte_event == "Submit":
@@ -1023,7 +1024,6 @@ def fr1_tech_window(primary_window):
             sg.Column(fr1_tech_2, element_justification = "left"),
             sg.VerticalSeparator(),
             sg.Column(fr1_tech_3, element_justification = "left"),
-            sg.VerticalSeparator(),
         ],
         
         [
@@ -1038,7 +1038,7 @@ def fr1_tech_window(primary_window):
     while True:
         fr1_event, fr1_values = fr1_window.read()
         # print(fr1_event, fr1_values)
-        if fr1_event in (sg.WIN_CLOSED, "Exit"):
+        if fr1_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if fr1_event == "Submit":
@@ -1072,7 +1072,6 @@ def wlan_tech_window(primary_window):
     ]
     
     wlan_6e_tech_list = [
-        [sg.Checkbox("Wi-Fi 6E (Aggregated)", key = "Wi-Fi 6E")],
         [sg.Checkbox("U-NII 5", key = "U-NII 5")],
         [sg.Checkbox("U-NII 6", key = "U-NII 6")],
         [sg.Checkbox("U-NII 7", key = "U-NII 7")],
@@ -1098,7 +1097,7 @@ def wlan_tech_window(primary_window):
     while True:
         wlan_event, wlan_values = wlan_window.read()
         # print(wlan_event, wlan_values)
-        if wlan_event in (sg.WIN_CLOSED, "Exit"):
+        if wlan_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if wlan_event == "Submit":
@@ -1139,7 +1138,7 @@ def bt_tech_window(primary_window):
     while True:
         bluetooth_event, bluetooth_values = bluetooth_window.read()
         # print(bluetooth_event, bluetooth_values)
-        if bluetooth_event in (sg.WIN_CLOSED, "Exit"):
+        if bluetooth_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if bluetooth_event == "Submit":
@@ -1179,7 +1178,7 @@ def thread_tech_window(primary_window):
     while True:
         thread_event, thread_values = thread_window.read()
         # print(thread_event, thread_values)
-        if thread_event in (sg.WIN_CLOSED, "Exit"):
+        if thread_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if thread_event == "Submit":
@@ -1204,11 +1203,9 @@ def mss_tech_window(primary_window):
     """
     
     mss_tech_list = [
-        [
-            sg.Checkbox("MSS (L-Band)", key = "MSS (L-Band)"),
-            sg.Checkbox("NTN L-Band", key = "NTN L-Band"),
-            sg.Checkbox("NTN S-Band", key = "NTN S-Band")
-        ],
+        [sg.Checkbox("MSS (L-Band)", key = "MSS (L-Band)")],
+        [sg.Checkbox("NTN L-Band", key = "NTN L-Band")],
+        [sg.Checkbox("NTN S-Band", key = "NTN S-Band")],
         
         [
             sg.Submit(button_color = ("black", "#D3D3D3")),
@@ -1222,7 +1219,7 @@ def mss_tech_window(primary_window):
     while True:
         mss_event, mss_values = mss_window.read()
         # print(mss_event, mss_values)
-        if mss_event in (sg.WIN_CLOSED, "Exit"):
+        if mss_event in (sg.WIN_CLOSED, "Close"):
             break
         
         if mss_event == "Submit":
@@ -1238,7 +1235,7 @@ def mss_tech_window(primary_window):
     
     return final_mss_list
 
-def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, sssf, cwd):
+def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, sssf, cwd):
     """
     Collects all the variables needed to create the reported results raw
     workbook.
@@ -1278,7 +1275,7 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
                 if not nwtl:
                     print("There is no non-Wi-Fi Data.")
                 else:
-                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
+                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                     
                     stuff_for_not_wlan.reported_tech_results()
                     # stuff_for_not_wlan.spatial_sum_sar()
@@ -1286,7 +1283,7 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
                 if not wtl:
                     print("There is no Wi-Fi Data.")
                 else:
-                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
+                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                     
                     stuff_for_wlan.reported_tech_results()
                     # stuff_for_wlan.spatial_sum_sar()
@@ -1302,8 +1299,8 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
                 
                 wlan = ["Wi-Fi 2.4 GHz", "Wi-Fi 5.2 GHz", "Wi-Fi 5.3 GHz", "Wi-Fi 5.5 GHz", "Wi-Fi 5.8 GHz", "U-NII 5", "U-NII 6", "U-NII 7", "U-NII 8"]
                 
-                stuff_for_not_wlan = Not_WiFi(data = data, tech_list = not_wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
-                stuff_for_wlan = Wlan(data = data, tech_list = wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
+                stuff_for_not_wlan = Not_WiFi(data = data, tech_list = not_wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
+                stuff_for_wlan = Wlan(data = data, tech_list = wlan, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = sssf, log_dir = cwd)
                 
                 stuff_for_not_wlan.reported_tech_results()
                 stuff_for_wlan.reported_tech_results()
@@ -1319,7 +1316,7 @@ def reported_results(primary_window, rr_out, nwtl, wtl, data, rwf, swf, stxwf, s
     else:
         sg.popup("The Reported Results workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = reported_results)))
 
-def summary_results(primary_window, sr_out, nwtl, wtl, data, rwf, swf, stxwf, cwd, exl):
+def summary_results(primary_window, sr_out, nwtl, wtl, data, rwf, swf, cwd, exl):
     """
     Collects all the variables needed to create the reported results raw
     workbook.
@@ -1414,14 +1411,14 @@ def summary_results(primary_window, sr_out, nwtl, wtl, data, rwf, swf, stxwf, cw
                 if not nwtl:
                     print("There is no non-Wi-Fi Data.")
                 else:
-                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
+                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = "", log_dir = cwd)
                     
                     stuff_for_not_wlan.summary_tech_results()
                 
                 if not wtl:
                     print("There is no Wi-Fi Data.")
                 else:
-                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
+                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = "", log_dir = cwd)
                     
                     stuff_for_wlan.summary_tech_results()
                 
@@ -1442,8 +1439,8 @@ def summary_results(primary_window, sr_out, nwtl, wtl, data, rwf, swf, stxwf, cw
                 
                 final_trans_list = list(new_trans_dict.values())
                 
-                stuff_for_not_wlan = Not_WiFi(data = data, tech_list = not_wlan, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
-                stuff_for_wlan = Wlan(data = data, tech_list = wlan, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
+                stuff_for_not_wlan = Not_WiFi(data = data, tech_list = not_wlan, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = "", log_dir = cwd)
+                stuff_for_wlan = Wlan(data = data, tech_list = wlan, transmitter_names = final_trans_list, exposure_conditions = exl, reported_results_filepath = rwf, summary_results_filepath = swf, spatial_sum_sar_filepath = "", log_dir = cwd)
                 
                 stuff_for_not_wlan.summary_tech_results()
                 stuff_for_wlan.summary_tech_results()
@@ -1508,67 +1505,7 @@ def sec1_results(primary_window, sec_out, data, fcc, ised, cwd):
     else:
         sg.popup("The Section 1 workbook directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = sec1_results)))
 
-def smtx_results(primary_window, stx_out, data, nwtl, wtl, rwf, swf, stxwf, cwd):
-    """
-    Generates a workbook with all the SAR data in one sheet
-    
-    Args:
-        stx_out (str): Output directory for TAS workbook
-        data (dataframe): Raw data from all the SAR workbooks
-        nwtl (list): List of technologies that are not Wi-Fi
-        wtl (list): List of technologies that are Wi-Fi
-        rwf (str): String filepath for the reported resutls workbook
-        swf (str): String filepath for the summary results workbook
-        stxwf (str): String filepath for the TAS workbook
-        cwd (str): String filepath for the current working directory
-    """
-    
-    yes_no = [
-        [sg.Text("Has all the pertinent information been entered?")],
-        
-        [
-            sg.Button("Yes", key = "Yes", button_color = ("black", "#D3D3D3")),
-            sg.Exit(button_text = "No", button_color = ("white", "red"))
-        ]
-    ]
-    
-    smtx_results = sg.Window("Generate Smart Transmit Restults Workbook", yes_no, element_justification = "center", finalize = True)
-    center_window(primary_window, new_window = smtx_results)
-    
-    if stx_out != "":
-        while True:
-            smtx_event, smtx_values = smtx_results.read()
-            # print(rr_event, rr_values)
-            if smtx_event in (sg.WIN_CLOSED, "Exit"):
-                break
-            
-            if smtx_event == "Yes":
-                if not nwtl:
-                    print("There is no non-Wi-Fi Data.")
-                else:
-                    stuff_for_not_wlan = Not_WiFi(data = data, tech_list = nwtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
-                    
-                    stuff_for_not_wlan.smtx_tech_results()
-                
-                if not wtl:
-                    print("There is no non-Wi-Fi Data.")
-                else:
-                    stuff_for_wlan = Wlan(data = data, tech_list = wtl, transmitter_names = "", exposure_conditions = "", reported_results_filepath = rwf, summary_results_filepath = swf, smtx_results_filepath = stxwf, log_dir = cwd)
-                    
-                    stuff_for_wlan.smtx_tech_results()
-                
-                reported_excel(stxwf)
-                
-                sg.popup("Done", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = smtx_results)))
-                
-                smtx_results.close()
-                
-        smtx_results.close()
-    
-    else:
-        sg.popup("The Smart Transmit directory has not been entered;\nplease enter the appropriate directory", button_color = ("black", "#D3D3D3"), location = (center_window(primary_window, new_window = smtx_results)))
-
-def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf, sec1fccf, sec1isedf, stxf, sssf, cwd, data, exl):
+def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, rswf, sswf, sec1fccf, sec1isedf, sssf, cwd, data, exl):
     """
     Bulk of the program where it filters the raw SAR data, concatenates it into one dataframe,
     records the output directories for all the other sub-functions, and exposure conditions.
@@ -1578,7 +1515,6 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
         rr_out (str): String filepath for the reported results directory
         sr_out (str): String filepath for the summary results directory
         sec_out (str): String filepath for the Section 1 directory
-        stx_out (str): String filepath for the TAS directory
         rswf (str): String filepath for the reported results
         sswf (str): String filepath for the summary results 
         sec1fccf (str): String filepath for Section 1 FCC
@@ -1609,8 +1545,7 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
             sg.Exit(button_color = ("white", "red")),
             sg.Button("Generate Reported Results Workbook", key = "-REPORTED_RESULTS-", button_color = ("black", "#D3D3D3")),
             sg.Button("Generate Summary Results Workbook", key = "-SUMMARY_RESULTS-", button_color = ("black", "#D3D3D3")),
-            sg.Button("Generate Section 1 Workbook", key = "-SEC1_RESULTS-", button_color = ("black", "#D3D3D3")),
-            sg.Button("Generate Smart Transmit Workbook", key = "-SMTX_RESULTS-", button_color = ("black", "#D3D3D3"))
+            sg.Button("Generate Section 1 Workbook", key = "-SEC1_RESULTS-", button_color = ("black", "#D3D3D3"))
         ]
     ]
     
@@ -1626,7 +1561,7 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
     thread_tech_list = []
     mss_tech_list    = []
     
-    while True and wb_1 != "" and rr_out != "" or sr_out != "" or sec_out != "" or stx_out != "":
+    while True and wb_1 != "" and rr_out != "" or sr_out != "" or sec_out != "":
         tech_event, tech_values = tech_window.read()
         if tech_event in (sg.WINDOW_CLOSED, "Exit"):
             data = None
@@ -1695,7 +1630,7 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
             not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
             wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
             
-            reported_results(primary_window = tech_window, rr_out = rr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, sssf = sssf, cwd = cwd)
+            reported_results(primary_window = tech_window, rr_out = rr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, sssf = sssf, cwd = cwd)
         
         if tech_event == "-SUMMARY_RESULTS-":
             gsm    = gsm_tech_list
@@ -1712,32 +1647,15 @@ def tech_band(primary_window, wb_1, rr_out, sr_out, sec_out, stx_out, rswf, sswf
             not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
             wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
             
-            summary_results(primary_window = tech_window, sr_out = sr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd, exl = exl)
+            summary_results(primary_window = tech_window, sr_out = sr_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, cwd = cwd, exl = exl)
         
         if tech_event == "-SEC1_RESULTS-":
             sec1_results(primary_window = tech_window, sec_out = sec_out, data = data, fcc = sec1fccf, ised = sec1isedf, cwd = cwd)
-        
-        if tech_event == "-SMTX_RESULTS-":
-            gsm    = gsm_tech_list
-            wcdma  = wcdma_tech_list
-            lte    = lte_tech_list
-            fr1    = fr1_tech_list
-            wlan   = wlan_tech_list
-            bt     = bt_tech_list
-            thread = thread_tech_list
-            mss    = mss_tech_list
-            
-            collection = [gsm, wcdma, lte, fr1, bt, thread, mss]
-            
-            not_wifi_tech_list = [new for index, name in enumerate(collection) for new in name if new != ""]
-            wifi_tech_list     = [tech for index, tech in enumerate(wlan)]
-            
-            smtx_results(primary_window = tech_window, stx_out = stx_out, nwtl = not_wifi_tech_list, wtl = wifi_tech_list, data = data, rwf = rswf, swf = sswf, stxwf = stxf, cwd = cwd)
-        
+    
     else:
         if wb_1 == "":
             sg.popup("Missing the directory to Workbook 1; please enter the appropriate directory.", button_color = ("white", "red"), location = (center_window(primary_window, new_window = tech_window)))
-        elif rr_out == "" and sr_out == "" and sec_out == "" and stx_out == "":
+        elif rr_out == "" and sr_out == "" and sec_out == "":
             sg.popup("Missing the directory to output the desired workbook; please enter the appropriate directory.", button_color = ("white", "red"), location = (center_window(primary_window, new_window = tech_window)))
             
     tech_window.close()
@@ -1995,7 +1913,7 @@ def main_window():
                 sg.Exit(button_color = ("white", "red")),
                 sg.Button("Clear", key = "-CLEAR-", button_color = ("black", "#D3D3D3")),
                 sg.Button("Technologies & Bands", key = "-TECH_BAND-", button_color = ("black", "#D3D3D3")),
-                sg.Button("Summary Workbook Comparison", key = "-SUM_COMPARE-", button_color = ("black", "#D3D3D3")),
+                # sg.Button("Summary Workbook Comparison", key = "-SUM_COMPARE-", button_color = ("black", "#D3D3D3")),
             ]
         ]
         
@@ -2048,18 +1966,9 @@ def main_window():
                 sec1_fcc_workbook_filepath = ""
                 sec1_ised_workbook_filepath = ""
             
-            if values["-SMTX_OUT-"] != "":
-                smtx_sar_workbook_filename = parse_smtx_workbook_name(values["-Workbook_1-"])
-                smtx_sar_workbook_directory = os.path.normpath(values["-SMTX_OUT_BROWSE-"])
-                smtx_sar_workbook_filepath = os.path.join(smtx_sar_workbook_directory, smtx_sar_workbook_filename) # smtx_sar_workbook_directory + "/" + smtx_sar_workbook_filename
-                
-                # print(worst_case_summary_sar_workbook_filepath)
-            else:
-                smtx_sar_workbook_filepath = ""
+            # if event == "-SUM_COMPARE-":
+            #     summary_compare(cwd)
             
-            if event == "-SUM_COMPARE-":
-                summary_compare(cwd)
-                
             if values["-Workbook_1-"] != "":
                 rem_key = ["-REPORT_OUT-", "-REPORT_OUT_BROWSE-", "-SUM_OUT-", "-SUM_OUT_BROWSE-", "-SEC1_OUT-", "-SEC1_OUT_BROWSE-", "-SMTX_OUT-", "-SMTX_OUT_BROWSE-" "-WB1_IN_BROWSE-", "-WB2_IN_BROWSE-", "-WB3_IN_BROWSE-", "-WB4_IN_BROWSE-", "-WB5_IN_BROWSE-", "-WB6_IN_BROWSE-", "-WB7_IN_BROWSE-", "-WB8_IN_BROWSE-", "-WB9_IN_BROWSE-", "-WB10_IN_BROWSE-", "-WB11_IN_BROWSE-", "-WB12_IN_BROWSE-", "-WB13_IN_BROWSE-", "-WB14_IN_BROWSE-", "-WB15_IN_BROWSE-", "-WB16_IN_BROWSE-", "-WB17_IN_BROWSE-", "-WB18_IN_BROWSE-", "-WB19_IN_BROWSE-", "-WB20_IN_BROWSE-", "-WB21_IN_BROWSE-", "-WB22_IN_BROWSE-"]
                 
@@ -2073,13 +1982,13 @@ def main_window():
                 
                 data = [pd.read_excel(wbs[index], sheet_name = "Data") for index, name in enumerate(wbs)]
                 
-                expose_list = ["Head", "Body-worn", "Body & Hotspot", "Body & Extremity", "Hotspot", "Extremity"]
+                expose_list = ["Head", "Body-worn", "Body & Hotspot", "Body & Extremity", "Hotspot", "Extremity", "Extremity Held-to-Head"]
                 
                 # print(wbs)
             
             if event == "-TECH_BAND-":
                 try:
-                    tech_band(primary_window = initial_window, wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], stx_out = values["-SMTX_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, stxf = smtx_sar_workbook_filepath, sssf = spatial_sum_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
+                    tech_band(primary_window = initial_window, wb_1 = values["-Workbook_1-"], rr_out = values["-REPORT_OUT-"], sr_out = values["-SUM_OUT-"], sec_out = values["-SEC1_OUT-"], rswf = reported_sar_workbook_filepath, sswf = worst_case_summary_sar_workbook_filepath, sec1fccf = sec1_fcc_workbook_filepath, sec1isedf = sec1_ised_workbook_filepath, sssf = spatial_sum_sar_workbook_filepath, cwd = cwd, data = data, exl = expose_list)
                 except UnboundLocalError:
                     window_x_local, window_y_local = initial_window.current_location()
                     window_width, window_height = initial_window.size
